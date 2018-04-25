@@ -1,0 +1,234 @@
+page-schedule-devices {
+	.devices {
+	    $grey-border: 1px solid #D7D7D7;
+	    $red-border: 2px solid red;
+	    $white-border: 1px solid #FFFFFF;
+	    $device-list-width: 280px;
+	    $cell-height: 70px;
+	    $cell-width: 120px;
+    
+	    $cell-padding: 6px;
+	    $event-height: 70px;
+	    $event-padding: 3px;
+	    $event-margin: 0px;
+	    $background-color-list :
+	        rgb(210, 80, 127),
+	        rgb(100, 149, 237),
+	        rgb(153, 50, 204),
+	        rgb(241, 169, 160),
+	        rgb(255, 140, 0),
+	        rgb(46, 139, 87),
+	        rgb(105, 105, 105),
+	        rgb(249, 191, 59),
+	        rgb(122, 231, 191),
+	        rgb(15, 35, 80),
+	        rgb(135, 38, 87),
+	        rgb(227, 38, 54),
+	        rgb(137, 91, 138);
+
+	    @mixin generate-color($prefix: false) {
+	        @each $color in $background-color-list {
+	            $i: index($background-color-list, $color) - 1;
+	            @if ($prefix) {
+	                #{$prefix}.color#{$i} {
+	                    background-color: $color;
+	                }
+	            } @else {
+	                .color#{$i} {
+	                    background-color: $color;
+	                }
+	            }            
+	        }
+	    }
+
+	    scroll-content {
+	        padding-top: 0px;
+	    }
+
+	    .from-to {
+	        ion-datetime {
+	            max-width: 100%;
+	        }
+	        width: 100%;
+	        display: flex;
+	        justify-content: center;
+	        flex-direction: row;
+	        flex-wrap: nowrap;
+	        align-items: center;
+	        * {
+	            font-size: 2rem;
+				font-family: -webkit-pictograph;
+	        }
+	        .to {
+	            opacity: .7;
+	        }
+	    }
+    
+	    .ganttview {
+	        padding: 0px;
+	        overflow: hidden;
+	        display: flex;
+	        flex-direction: row;
+	        align-items: stretch;
+	        border: $grey-border;
+	        &.hidden {
+	            visibility: hidden;
+	        }
+	        .sepcialday{
+	            background-color: #FFEFE5 !important;
+	        }
+	        .saturday {
+	            background-color: #EBF0F6 !important;
+	        }
+	        .fixed-header {
+	            position: fixed;
+	            background-color: #fff;
+	            z-index: 12;
+	            border-bottom: $grey-border;
+	            overflow: hidden;
+	        }
+	        .device-list {
+	            flex-grow: 0;
+	            flex-shrink: 0;
+	            flex-basis: $device-list-width;
+	            flex-direction: column;
+	            .device-list-header {
+	                .timezone {
+	                    display: flex;
+	                    align-items: center;
+	                    height: $cell-height;
+	                    padding: $cell-padding;
+	                    font-size: 2.2rem;
+	                }
+	            }
+	            .device {
+	                border-top: $grey-border;
+	                padding: 6px;
+	                height: $cell-height;
+	                word-break: keep-all;
+	                overflow: hidden;
+	                display: flex;
+	                align-items: flex-start;
+	                justify-content: flex-start;
+	                div {
+	                    display: flex;
+	                    flex-shrink: 0;
+	                    width: 16px;
+	                    height: 16px;
+	                    background: grey;
+	                    margin-right: 6px;
+	                }
+	                @include generate-color();
+	            }
+	        }
+	        .ganttview-slide {
+	            border-left: $grey-border;
+	            overflow: auto;
+	            .now-line {
+	                height: 0px;
+	                margin-left: -2px;
+	                .line {
+	                    height: 100%;
+	                    display: block;
+	                    position: relative;
+	                    width: 0px;
+	                    border-right: $red-border;
+	                    z-index: 9;
+	                }
+	            } 
+	            .ganttview-day-time-header {
+	                display: flex;
+	                flex-direction: column;
+	                .ganttview-fixed-date{
+	                    height: 30px;
+	                    position: absolute;
+	                    line-height: 30px;
+	                    z-index: 11;
+	                    background-color: #fff;
+	                    width: auto;
+	                    padding-left: $cell-padding;
+	                }
+	                .day-container {
+	                    display: flex;
+	                    flex-direction: row;
+	                    height: $cell-height / 2;
+	                    .day {
+	                        flex-grow: 1;
+	                        line-height: $cell-height / 2;
+	                        border-right: $grey-border;
+	                        padding-left: $cell-padding;
+	                    }
+	                }
+	                .time-container {
+	                    display: flex;
+	                    flex-direction: row;
+	                    height: $cell-height / 2;
+	                    .day {
+	                        display: flex;
+	                        flex-direction: row;
+	                        flex-grow: 1;           
+	                        .time {
+	                            flex-grow: 1;
+	                            flex-basis: $cell-width;
+	                            line-height: $cell-height / 2;
+	                            border-right: $grey-border;
+	                            border-top: $grey-border;
+	                            padding-left: $cell-padding;
+	                        }
+	                    }
+	                }
+	            }
+	            .ganttview-grid {
+	                display: flex;
+	                flex-direction: column;
+	                float: left;
+	                .row {
+	                    display: flex;
+	                    flex-direction: row;
+	                    height: $cell-height;
+	                    .day {
+	                        display: flex;
+	                        flex-direction: row;
+	                        flex-grow: 1;
+	                        .time {
+	                            flex-grow: 1;
+	                            flex-basis: $cell-width;
+	                            border-right: $grey-border;
+	                            border-top: $grey-border;
+	                        }
+	                    }
+	                }
+	            }
+	            .ganttview-events {
+	                .event-container {
+	                    height: $event-height;
+	                    padding-top: 0px;
+	                    .event {
+	                        height: $event-height;
+	                        position: relative;
+	                        z-index: 8;
+	                        color: white;
+	                        background: grey;
+	                        padding: $event-padding;
+	                        border-left: $white-border;
+	                        border-right: $white-border;
+	                        .event-text {
+	                            height: 100%;
+	                            text-align: left;
+	                            position: absolute;
+	                            overflow: hidden;
+	                            word-break: break-all;
+	                            -webkit-line-clamp: 3;
+	                            -webkit-box-orient: vertical;
+	                            display: -webkit-box;
+	                            line-height: 18px;
+	                        }
+	                        @include generate-color('&');
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+}
+

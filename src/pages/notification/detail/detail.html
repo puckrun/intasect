@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"app.notification.detail" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="notification-detail">
+    <div class="loading" text-center [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+    <div [hidden]="!isLoadCompleted">
+        <ion-item no-lines>
+            <h2 class="title selectable">{{title}}</h2>
+        </ion-item>
+        <ion-item class="status">
+            <ion-avatar item-left class="avatar">
+                <img src="{{createUserAvatar}}" />
+            </ion-avatar>
+            <div class="name">{{createUserName}}</div>
+            <div class="time">
+                {{publishStartDate}}
+            </div>
+            <button ion-button icon-only disabled color="primary" clear item-right>
+                <ion-icon name="eye"></ion-icon>
+                <div>{{readCount}}</div>
+            </button>
+        </ion-item>
+        <div class="contents selectable" padding>
+            <div [innerHTML]="content"></div>
+            <img *ngFor="let attachImage of attachImagesForDisplay" [src]="attachImage" />
+        </div>
+        <div padding-left class="attachment" flex-sm="100" *ngFor="let attachFile of attachFilesForDownload">
+            <span>{{attachFile.attachmentName}}</span><span class="file-size">{{attachFile.attachmentSize}}</span>
+        </div>
+        <div padding-left padding-bottom class="download-message" [hidden]="!hasAttachFilesForDownload">{{"app.blog.message.error.attachmentTooLargeTodownload" | translate}}</div>
+    </div>
+    <ion-fab bottom right #fab>
+        <button ion-fab color="top" class="detail scroll-to-top" fab fab-right fab-bottom [hidden]="!isScrollToTopButtonVisible" (click)="scrollToDetailPageTop()">
+            <ion-icon name="arrow-up"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

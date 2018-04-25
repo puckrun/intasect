@@ -1,0 +1,73 @@
+page-blog-add-blog {
+    .add-blog {
+        .selected-pictures {
+            ion-label {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                ion-thumbnail {
+                    margin: 1rem;
+                    min-width: 19%;
+                    button {
+                        font-size: 2.5rem;
+                        position: relative;
+                        box-shadow: 0 0 0 0;
+                        top: 1.5rem;
+                        left: 4rem;
+                        border-radius: 5rem;
+                        margin: 0rem;
+                        padding: 0rem;
+                        height: auto;
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+        ion-list {
+            margin-bottom: 0;
+        }
+        .item h2 {
+            line-height: 1.6;
+            font-size: 1.6rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .selected-users {
+            float: left;
+            width: 50%;
+            text-align: left;
+        }
+    }
+    .add-blog-toolbar {
+        .upload-input {
+            opacity:0; 
+            position: absolute;
+            right: 0;
+            width: 60px;
+            height: 50px;
+        }
+        .toolbar-content {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .select-read-limit-type {
+        ion-list {
+            margin-bottom: 0;
+        }
+        .item h2 {
+            line-height: 1.6;
+            font-size: 1.6rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .selected-users {
+            float: left;
+            width: 50%;
+            text-align: left;
+        }
+    }
+}
+

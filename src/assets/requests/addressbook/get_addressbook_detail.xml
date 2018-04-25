@@ -1,0 +1,7 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetAddressBookDetail xmlns="http://schemas.intasect.co.jp/addressbook/service/SearchAddressBook" preserveSpace="no" qAccess="0" qValues="">
+      <employeeCd />
+    </GetAddressBookDetail>
+  </SOAP:Body>
+</SOAP:Envelope>

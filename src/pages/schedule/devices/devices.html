@@ -1,0 +1,90 @@
+<ion-content #pageContent padding class="devices">
+    <div class="toolbar">
+        <button ion-button icon-only item-left clear (click)="selectPerviousDay()">
+            <ion-icon  name="arrow-back"></ion-icon>
+        </button>
+        <div class="from-to">
+            <button ion-button clear>
+                <ion-datetime class="from" displayFormat="YYYY/MM/DD" 
+                          min={{minDisplayDate}} max={{maxDisplayDate}} 
+                          doneText=" {{'app.action.done' | translate}} " 
+                          cancelText=" {{'app.action.cancel' | translate}} " 
+                          [(ngModel)] = "fromDate" 
+                          (ngModelChange)="refresh()">
+                </ion-datetime>
+            </button>
+            <span class="from-to-text">-</span>
+            <!-- using the css disabled of button to css to, just change the opacity from 0.5 to 0.9. -->
+            <button ion-button clear disabled class="to">
+                <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)] = "toDate"></ion-datetime>
+            </button>
+        </div>
+        <button ion-button icon-only item-right clear (click)="selectNextDay()">
+            <ion-icon  name="arrow-forward"></ion-icon>
+        </button>
+    </div>
+    
+    <div class="loading" [hidden]="isLoadCompleted">
+        <ion-spinner></ion-spinner>
+    </div>
+    
+    <div #ganttview class="ganttview" overflow-scroll="true" [class.hidden]="!isLoadCompleted">
+        <div #deviceList class="device-list">
+            <div #deviceListHeader class="device-list-header">
+                <div class="timezone">{{timeZone}}</div>
+            </div>
+            <ion-row *ngFor="let device of devices; let i=index;">
+                <ion-col class="device">
+                    <div class="color{{i}}">
+                    </div>
+                    <span>{{device.targetName}}</span>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div #ganttviewSlide overflow-scroll="true" class="ganttview-slide" (scroll)="onGanttviewSlideScrollLeft()">
+            <div class="now-line">
+                <div #nowLine class="line" ></div>
+            </div>
+            <div #ganttviewDayTimeHeader class="ganttview-day-time-header">
+                <div [style.width]="ganttviewWidth + 'px'">
+                    <div #ganttviewFixedDate [hidden]="!showFixedDate" class="ganttview-fixed-date {{(fixedDate.isSepcialDay || fixedDate.isSunday) ? 'sepcialday' : ''}} {{(fixedDate.isSaturday) ? 'saturday' : ''}}">
+                        {{fixedDate.displayDate}}
+                    </div>
+                    <div class="day-container">
+                        <div *ngFor="let date of displayDates" class="day {{(date.isSepcialDay || date.isSunday) ? 'sepcialday' : ''}} {{(date.isSaturday) ? 'saturday' : ''}}" >
+                            {{date.displayDate}}
+                        </div>
+                    </div>
+                    <div class="time-container">
+                        <div class="day" *ngFor="let date of displayDates">
+                            <div *ngFor="let time of dateTimes" class="time {{(date.isSepcialDay || date.isSunday) ? 'sepcialday' : ''}} {{(date.isSaturday) ? 'saturday' : ''}}">
+                                {{time}}
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="ganttview-grid" [style.width]="ganttviewWidth + 'px'">
+                <div *ngFor="let device of devices" class="row">
+                    <div class="day" *ngFor="let date of displayDates">
+                        <div *ngFor="let time of dateTimes" class="time {{(date.isSepcialDay || date.isSunday) ? 'sepcialday' : ''}} {{(date.isSaturday) ? 'saturday' : ''}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ganttview-events" [style.width]="ganttviewWidth + 'px'">
+                <div *ngFor="let device of devices; let i=index;" class="event-container">
+                    <div *ngFor="let event of device.events" class="event color{{i}}" 
+                        [style.width]="event.timeLength" 
+                        [style.margin-left]="event.eventMarginLeft" 
+                        [style.margin-top]= "event.eventMarginTop"
+                        (click)="showDetail(event)">
+                        <div class="event-text">
+                            {{(event.visibility === 'public' || isAdmin || event.isSelf == 'true') ? event.participants : ( "app.schedule.visibility.invisible" | translate)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

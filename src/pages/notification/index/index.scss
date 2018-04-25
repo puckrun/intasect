@@ -1,0 +1,65 @@
+/*@import "../pages/notification/detail/detail";
+@import "../shared/components/image-slides/image-slides";*/
+
+page-notification-index {
+    .notification-index {
+        ion-avatar {
+            img {
+                width: 3.6rem;
+                height: 3.6rem;
+                max-width: 3.6rem;
+                max-height: 3.6rem;
+                margin: 0 auto;
+            }
+        }
+        .title {
+            white-space: pre-wrap;
+            font-weight: normal;
+        }
+        .high-priority {
+            color: red;
+        }
+        .status {
+            text-align: center;
+            width: 6rem;
+            margin: 0px;
+            .new {
+                color: white;
+                padding: 4px;
+                border-radius: 2px;
+                background-color: red;
+                margin-bottom: 4px;
+            }
+        }
+        
+    }
+
+    .ios {
+        .notification-index {
+            .status{
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    .md {
+        .notification-index {
+            .avatar{
+                img {
+                    width: 6.5rem;
+                    height: 6.5rem;
+                }
+            }
+        }
+        .notification-index {
+            .status{
+                width: 6.5rem;
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}

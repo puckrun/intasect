@@ -1,0 +1,7 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <DownloadAttachmentByAttachmentId xmlns="http://schemas.intasect.co.jp/generictools/service/Notification" preserveSpace="no" qAccess="0" qValues="">
+      <attachmentId />
+    </DownloadAttachmentByAttachmentId>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{"app.addressBook.list-title" | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-label >公司</ion-label>
+        <ion-select [(ngModel)]="selectedCompany" >
+            <ion-option value="" selected>全部</ion-option>
+            <ion-option *ngFor="let company of companyArrAll" value="{{company.companyCd}}">{{company.companyNm}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-input type="search" placeholder="姓名" [(ngModel)]="searchParam"></ion-input>
+    </ion-item>
+    <button ion-button (click)="searchEmployee()">检索</button>
+
+    <ion-list *ngFor="let company of companyArr">
+        <ion-item style="background-color: #e9e9e9; font-size: 16px">
+            {{company.companyNm}}
+        </ion-item>
+        <button ion-item style="font-size: 14px; margin-left: 12px"
+                *ngFor="let employee of getCompanyEmployee(company.companyNm)"
+                (click)="openEmployeePage(employee)" >
+            {{employee.employeeNm }}
+        </button>
+    </ion-list>
+</ion-content>

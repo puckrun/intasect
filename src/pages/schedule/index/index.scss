@@ -1,0 +1,137 @@
+/*@import "../pages/schedule/event-detail/event-detail";
+@import "../pages/schedule/edit-event/edit-event";
+@import "../pages/schedule/select-devices/select-devices";
+@import "../pages/schedule/select-user/select-user";*/
+
+page-schedule-index {
+    
+    .calendar-top-toolbar {
+        display: flex;
+        justify-content: space-between;
+        .change-month {
+            padding-left: 0;
+            padding-right: 0;
+            .item-cover {
+                height: auto;
+            }
+            .datetime-text {
+                align-self: center;
+            }
+        }
+    }
+
+    .month-calendar {
+        ion-slides {
+            width: 100%;
+	    .swiper-container {
+	            height: auto;
+	            .swiper-slide {
+	                align-items: flex-start;
+		    }
+            }
+        }
+        .week-names {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-weight: 600;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            .weekends {
+                color: $primary-color-dark;
+            }
+        }
+        .calendar {
+            .days{
+                border: 0;
+                border-bottom-width: 0.55px;
+                border-top-width: 0.55px;
+                border-style: solid;
+                border-color: #B6B6B6;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                .day {
+                    padding-top: 4px;
+                    width: percentage(1 / 7);
+                    height: 42px;
+                    display: inline-block;
+                    text-align: center;
+                    cursor: pointer;
+                    span {
+                        padding: 4px;
+                        border-radius: 28px;
+                        width: 28px;
+                        display:inline-block;
+                        font-size: 16px;
+                    }
+                    .hover {
+                        span{
+                            background-color: $primary-text-color;
+                            color: $primary-color-text;
+                        }
+                        &.today {
+                            span{
+                                background-color: $primary-color-dark;
+                                color: $primary-color-text;
+                            }
+                        }
+                    }
+                    .today {
+                        color: $primary-color-dark;
+                    }
+                    .weekends {
+                        color: $primary-color-dark;
+                    }
+                    .not-this-month {
+                        visibility: hidden;
+                    }
+                    ion-badge {
+                        min-width: 0px;
+                        padding: 3px;
+                        position: relative;
+                        top: -6px;
+                        background-color: $secondary-text-color;
+                    }
+                }
+            }
+            .events{
+                .border-right-solid {
+                    border-right-style: solid;
+                    border-right-width: thin;
+                }
+                .border-right-default {
+                    border-right-color: $secondary-text-color;
+                }
+                .border-right-green {
+                    border-right-color: green;
+                }
+                .border-right-primary {
+                    border-right-color: $primary-color-dark;
+                }
+                .border-right-red {
+                    border-right-color: $accent-color;
+                }
+                ion-label {
+                    margin: 5px;
+                }
+                .event-in-past-time {
+                    color: $secondary-text-color;
+                }
+                .event-title {
+                    white-space: normal;
+                }
+            }
+        }
+        
+        
+    }
+
+    .calendar-bottom-toolbar {
+        .toolbar-content {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+

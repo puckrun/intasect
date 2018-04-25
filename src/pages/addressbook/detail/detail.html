@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"app.addressBook.detail" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content >
+    <div class="loading" [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+    <div [hidden]="!isLoadCompleted">
+        <ion-list>
+            <ion-item >
+                <ion-thumbnail item-left class="avatar">
+                    <img src="{{employeeInfo.photo}}" />
+                </ion-thumbnail>
+                <p>{{employeeInfo.employeeNm}}</p>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>公司</ion-label>
+                <ion-input type="text" value="{{employeeInfo.companyNm}}" aria-readonly></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>部门</ion-label>
+                <ion-input type="text" value="{{employeeInfo.departmentNm}}" aria-readonly></ion-input>
+            </ion-item>
+            <a ion-item href="mailto:{{employeeInfo.email}}" *ngIf="employeeInfo.email !=''">
+                <ion-icon name="mail" primary item-right></ion-icon>
+                {{employeeInfo.email}}
+
+            </a>
+            <a ion-item (click)="popPhoneAction()" *ngIf="employeeInfo.mobilePhoneNo!=''">
+                <ion-icon name="call" primary item-right></ion-icon>
+                <p>{{employeeInfo.mobilePhoneNo}}</p>
+            </a>
+        </ion-list>
+    </div>
+</ion-content>

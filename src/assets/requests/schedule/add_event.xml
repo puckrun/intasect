@@ -1,0 +1,26 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Body>
+        <AddEvent xmlns="http://schemas.intasect.co.jp/mycal/service/event" preserveSpace="no" qAccess="0" qValues="">
+            <eventParameters>
+                <EventOutput>
+                    <categoryID></categoryID>
+                    <isAllDay></isAllDay>
+                    <isRepeat></isRepeat>
+                    <repeatRule></repeatRule>
+                    <startTime></startTime>
+                    <endTime></endTime>
+                    <deviceID></deviceID>
+                    <visibility></visibility>
+                    <isReminder></isReminder>
+                    <reminderRule></reminderRule>
+                    <title></title>
+                    <summary></summary>
+                    <location></location>
+                    <status></status>
+                    <isDeviceRepeatWarned></isDeviceRepeatWarned>
+                    <isEventRepeatWarned></isEventRepeatWarned>
+                </EventOutput>
+            </eventParameters>
+        </AddEvent>
+    </SOAP:Body>
+</SOAP:Envelope>

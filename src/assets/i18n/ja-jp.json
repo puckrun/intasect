@@ -1,0 +1,258 @@
+{
+    "app": {
+        "message": {
+            "error": {
+                "title": "エラー",
+                "systemError": "システムエラーが発生しました。大変お迷惑かかりましたが、システム管理者に連絡してください。",
+                "faildToLogin": "ログインが失効しました。",
+                "faildToDownload": "ダウンロードが失敗しました。",
+                "faildToExtract": "インストールが失敗しました。"
+            },
+            "info": {
+                "title": "情報",
+                "versionTooOld": "最新のバージョンがあります。"
+            },
+            "warning": {
+                "title": "警告",
+                "logout": "ログアウトしますか？",
+                "updateToNewVersion": "最新のバージョンはリリースされました。更新しますか？"
+            },
+            "loading": {
+                "downloading": "最新版ダウンロード中 .. ",
+                "extracting": "インストール中 .. "
+            }
+        },
+        "action": {
+            "logout": "ログアウト",
+            "edit": "編集",
+            "delete": "削除",
+            "save": "保存",
+            "ok": "はい",
+            "back": "戻る",
+            "cancel": "キャンセル",
+            "select": "選択", 
+            "yes": "はい", 
+            "no": "いいえ", 
+            "done": "選択",
+            "search": "検索",
+            "preview": "プレビュー",
+            "finish": "完了",
+            "savePicture": "画像を保存"
+        },
+        "common": {
+            "readLimitType": {
+                "allUsers" : "全員",
+                "selectUsers" : "指定"
+            },
+            "selectedUserNames": "指定対象",
+            "selectReaders": "閲覧対象を選択",
+            "setReadLimitType": "公開設定",
+            "person": "人",
+            "message": {
+                "noUserSelected": "１人以上を指定してください。"
+            }
+        },
+        "date": {
+            "YYYYMM": "{{YYYY}}年{{MM}}月",
+            "MMDD": "{{MM}}月{{DD}}日",
+            "today": "今日",
+            "yesterday": "昨日",
+            "daily": "毎日",
+            "weeekly": "毎週",
+            "monthly": "毎月",
+            "day": "日",
+            "days": "日",
+            "hours": "時間"
+        },
+        "portal": {
+            "title": "ポータル",
+            "content": "しばらくお待ち下さい。"
+        },
+        "login": {
+            "title": "ログイン",
+            "loginId": "ログインID",
+            "password": "パスワード",
+            "autoLogin": "ログイン状態を保持する",
+            "server": "サーバー",
+            "iscsys": "日本Intalinx",
+            "intalinx_cn": "中国Intalinx",
+            "login": "ログイン",
+            "message": {
+                "error": {
+                    "title": "エラー",
+                    "idOrPasswordNotCorrect": "IDまたはパスワードが違います。"
+                }
+            }
+        },
+        "profile": {
+            "title": "プロファイル",
+            "oldPassword": "古いパスワード",
+            "newPassword": "パスワード",
+            "confirmPassword": "パスワード確認",
+            "changeAvatar": "プロファイル写真",
+            "changePassword": "パスワードの設定",
+            "message": {
+                "error": {
+                    "title": "エラー",
+                    "emptyPassword": "パスワードは空になることはできません。",
+                    "mismatchPassword": "パスワードが一致しません。　両方のテキストボックスに同じパスワードを入力するを確認してください。",
+                    
+                    "avatarTooLarge": "画像サイズが大きいですが、変更してください。"
+                },
+                "success": {
+                    "changeAvatar": "ユーザ画像は更新しました。"
+                },
+                "loading": {
+                    "avatarLoading": "ロード中......",
+                    "avatarUploading": "アップロード中......"
+                }
+            }
+        },
+        "info": {
+            "title": "Info"
+        },
+        "blog": {
+            "title": "ブログ",
+            "detail": "ブログ詳細",
+            "addBlog": "追加",
+            "add": "ブログ追加",
+            "blogTitile": "タイトル",
+            "blogContent": "内容",
+            "newBlog": "新",
+            "newReturn": "新",
+            "isSaving": "保存中......",
+            "comment": {
+                "add": "返信追加",
+                "content": "返信内容",
+                "reply": "返信"
+            },
+            "message": {
+                "error": {
+                    "title": "エラー",
+                    "noContent": "コメントを入力してください。",
+                    "pictureTooLarge": "画像サイズが大きいですが、変更してください。",
+                    "attachmentTooLargeTodownload": "上記のファイルはパソコンからダウンロードしてください。",
+                    "savePicture": "画像の保存ができませんでした。"
+                },
+                "success": {
+                    "savePicture": "画像が正常に保存されました。"
+                },
+                "warning": {
+                    "deleteBlog": "ブログを削除します。よろしいですか？",
+                    "deleteReplyContent": "返信を削除します。よろしいですか？"
+                }
+            }
+        },
+        "notification": {
+            "title": "通知",
+            "detail": "通知詳細",
+            "newNotification": "新"
+        },
+        "survey": {
+            "title": "アンケート",
+            "newSurvey": "新",
+            "detail": "アンケート詳細",
+            "optionContent": "コメント",
+            "answerSurvey": "送信",
+            "answerSurveyAgain": "再送信",
+            "result": "結果",
+            "completedStatus": "回収完了",
+            "collectionPeriod": "回収期間:",
+            "untilToday": "今日まで",
+            "lastDays": "残り{{days}}日",
+            "optionResultDetail": "選択肢結果詳細"
+        },
+        "about": {
+            "title": "このアプリについて",
+            "version": "バージョン",
+            "latestVersion": "最新バージョン",
+            "new": "新"
+        },
+        "schedule": {
+            "title": "スケジュール",
+            "event": {
+                "title": "タイトル", 
+                "schedule": "予定",
+                "start": "開始",
+                "end": "終了",
+                "startDate": "開始日付",
+                "endDate": "終了日付",
+                "startTime": "開始時間",
+                "endTime": "終了時間",
+                "allDay": "終日",
+                "repeat": "繰り返す", 
+                "category": "カテゴリ",
+                "location": "場所",
+                "summary": "内容",
+                "participant": "参加者",
+                "device": "施設",
+                "createUser": "登録者",
+                "updateUser": "更新者"
+            },
+            "repeatRules": {
+                "title": "繰り返し規則", 
+                "weekDay": "曜日", 
+                "monthDay": "日付", 
+                "daily": "毎日", 
+                "weekly": "毎週", 
+                "monthly": "毎月"
+            },
+            "visibility": {
+                "title": "公開制限",
+                "public": "一般公開",
+                "confidential": "限定公開",
+                "private": "非公開",
+                "invisible": "[未公開]"
+            },
+            "time": "時間",
+            "colon": "：",
+            "selectDevices": "施設を選択",
+            "selectParticipants": "参加者を選択",
+            "selectUser": {
+                "title": "検索対象を選択",
+                "group": "グループ",
+                "organization": "組織"
+            },
+            "devices": {
+                "title": "施設一覧" 
+            },
+            "index": {
+                "allDay": "終日", 
+                "mySchedule": "自分"
+            },
+            "eventDetail": {
+                "title": "予定詳細",
+                "delete": "予定削除"
+            },
+            "editEvent": {
+                "title": {
+                    "new": "予定新規", 
+                    "edit": "予定編集"
+                },
+                "saveEvent": {
+                    "new": "追加", 
+                    "edit": "保存"
+                },
+                "message": {
+                    "eventTitleNecessary": "予定のタイトルを入力してください！", 
+                    "endTimeShouldBeLater": "終了時間は開始時間以後に選択してください！",
+                    "repeatEndTimeShouldBeLater": "繰り返す終了時間は開始時間以後に選択してください！",
+                    "addEventSuccess": "予定追加完了しました。",
+                    "updateEventSuccess": "予定更新完了しました。",
+                    "undoChanged": "変更を廃棄しますか？"
+                },
+                "selectRepeatEventUpdateFlag": "編集・削除の対象を選択してください。", 
+                "selectAll": "全ての予定", 
+                "selectSpecial": "当該日付の予定のみ"
+            },
+            "deleteEvent": "予定削除",
+            "deleteRepeatEvent": {
+                "deleteEventOfSelectedDay": "当該日付の予定のみを削除",
+                "deleteAllEvents": "全ての予定を削除"
+            }
+        },
+        "biznavi": {
+            "title": "業務Navi"
+        }
+    }
+}

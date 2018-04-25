@@ -1,0 +1,6 @@
+<ion-tabs>
+  <ion-tab [root]="notificationIndex" tabTitle='{{"app.notification.title" | translate}}' tabIcon="notifications" tabBadge="{{share.notificationNewInformationCount>0?share.notificationNewInformationCount: null}}"
+    tabBadgeStyle="danger"></ion-tab>
+  <ion-tab [root]="blogIndex" tabTitle='{{"app.blog.title" | translate}}' tabIcon="chatbubbles" tabBadge="{{share.blogNewInformationCount>0?share.blogNewInformationCount: null}}" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab [root]="surveyIndex" tabTitle='{{"app.survey.title" | translate}}' tabIcon="paper" tabBadge="{{share.surveyNewInformationCount>0?share.surveyNewInformationCount: null}}" tabBadgeStyle="danger"></ion-tab>
+</ion-tabs>

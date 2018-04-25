@@ -1,0 +1,22 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+        <wsse:Username>root</wsse:Username>
+        <wsse:Password>cordys</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+    <header xmlns="http://schemas.cordys.com/General/1.0/">
+      <Logger xmlns="http://schemas.cordys.com/General/1.0/"/>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <samlp:Request xmlns:samlp="urn:oasis:names:tc:SAML:1.0:protocol" MajorVersion="1" MinorVersion="1" IssueInstant="2010-05-03T06:53:51Z" RequestID="aa23159489-0126-1853-28ca-d7024556c36">
+      <samlp:AuthenticationQuery>
+        <saml:Subject xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion">
+          <saml:NameIdentifier Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">root</saml:NameIdentifier>
+        </saml:Subject>
+      </samlp:AuthenticationQuery>
+    </samlp:Request>
+  </SOAP:Body>
+</SOAP:Envelope>

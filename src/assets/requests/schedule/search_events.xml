@@ -1,0 +1,25 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <SearchEvents xmlns="http://schemas.intasect.co.jp/mycal/service/event" preserveSpace="no" qAccess="0" qValues="">
+      <cursor id="0" position="0" numRows="5" maxRows="99999" sameConnection="false" />
+      <eventParameters>
+        <EventInput>
+          <categoryID />
+          <isRepeat />
+          <startTime />
+          <endTime />
+          <deviceID />
+          <visibility />
+          <title />
+          <summary />
+          <location />
+          <timezone />
+          <searchType />
+          <UserList>
+            <userID />
+          </UserList>
+        </EventInput>
+      </eventParameters>
+    </SearchEvents>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,25 @@
+page-login {
+    .login-header {
+        &::after {
+            background-image: initial;
+        }
+        .login-navbar {
+            .toolbar-background {
+                border: 0px;
+                background-color: #FFFFFF;
+            }
+            .logo {
+                padding-left: 2rem;
+                cursor: pointer;
+            }
+        }
+    }
+    .login {
+        .remember-loginID {
+            height: 73px;
+        }
+    }
+    .popover-content {
+        width: auto;
+    }
+}

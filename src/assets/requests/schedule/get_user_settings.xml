@@ -1,0 +1,11 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Body>
+        <GetUserSettings xmlns="http://schemas.intasect.co.jp/mycal/service/user" preserveSpace="no" qAccess="0" qValues="">
+            <userInfo>
+                <UserSettingInput>
+                    <userID />
+                </UserSettingInput>
+            </userInfo>
+        </GetUserSettings>
+    </SOAP:Body>
+</SOAP:Envelope>

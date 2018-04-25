@@ -1,0 +1,44 @@
+page-index{
+  .addressbook-company{
+    font-size: 16px;
+    background-color: transparent; 
+  }
+  .addressbook-employee{
+    font-size: 12px;
+  }
+  .bar-buttons-ios {
+    background: transparent;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    color: #fff
+  }
+  .bar-button::after {
+    left: -2px;
+    right: -2px;
+    top: -7px;
+    bottom: -6px;
+    position: absolute;
+    
+  }
+  .bar-button-default {
+    color: #FFFFFF;
+  }
+  .button-ios {
+    border-radius: 4px;
+    height: 2em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #A054E3;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+  }
+  .button-md {
+    border-radius: 4px;
+    height: 2em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #A054E3;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+    }
+}

@@ -1,0 +1,7 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetGroupListForCurrentUser xmlns="http://schemas.intasect.co.jp/mycal/service/group" preserveSpace="no" qAccess="0" qValues="">
+      <cursor id="0" position="0" numRows="99999" maxRows="99999" sameConnection="false" />
+    </GetGroupListForCurrentUser>
+  </SOAP:Body>
+</SOAP:Envelope>

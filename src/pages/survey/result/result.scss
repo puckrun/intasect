@@ -1,0 +1,58 @@
+page-survey-result {
+    .survey-result {
+        $background-color-list :
+            rgb(210, 80, 127),
+            rgb(100, 149, 237),
+            rgb(153, 50, 204),
+            rgb(241, 169, 160),
+            rgb(255, 140, 0),
+            rgb(46, 139, 87),
+            rgb(105, 105, 105),
+            rgb(249, 191, 59),
+            rgb(122, 231, 191),
+            rgb(15, 35, 80),
+            rgb(135, 38, 87),
+            rgb(227, 38, 54),
+            rgb(137, 91, 138);
+
+        @mixin generate-color($prefix: false) {
+            @each $color in $background-color-list {
+                $i: index($background-color-list, $color) - 1;
+                #{$prefix}.color#{$i}[value]::-webkit-progress-value {
+                    background: $color;
+                }
+            }
+        }
+        
+        progress {
+            height: 2.5rem;
+            width: calc(100% - 62px);
+            border-radius: 2px;
+            background-color: #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+            @include generate-color('&');
+        }
+
+        progress[value]::-webkit-progress-bar {
+            background: transparent;
+        }
+
+        progress[value]::-webkit-progress-value {
+            color: white;
+        }
+
+        span {
+            margin-right: 0px;
+            margin-left: 8px;
+        }
+
+        a {
+            float: right;
+            padding-top: 16px;
+            font-size: 1.4rem;
+        }
+        
+    }
+}
+
+

@@ -1,0 +1,265 @@
+{
+    "app": {
+        "message": {
+            "error": {
+                "title": "错误",
+                "systemError": "系统发生异常，请联系管理员！",
+                "faildToLogin": "无法登陆系统。",
+                "faildToDownload": "下载失败！",
+                "faildToExtract": "安装失败！"
+            },
+            "info": {
+                "title": "提示",
+                "versionTooOld": "有新的版本更新。"
+            },
+            "warning": {
+                "title": "警告",
+                "logout": "确定退出登录?",
+                "updateToNewVersion": "有新的版本更新，现在下载吗？"
+            },
+            "loading": {
+                "downloading": "正在下载 .. ",
+                "extracting": "正在安装 .. "
+            }
+        },
+        "action": {
+            "logout": "退出登录",
+            "edit": "编辑",
+            "delete": "删除",
+            "save": "保存",
+            "ok": "OK",
+            "back": "返回",
+            "cancel": "取消",
+            "select": "选择", 
+            "yes": "是的", 
+            "no": "不是", 
+            "done": "选择",
+            "search": "搜索",
+            "preview": "预览",
+            "finish": "完成",
+            "savePicture": "保存至相册"
+        },
+        "common": {
+            "readLimitType": {
+                "allUsers" : "所有人",
+                "selectUsers" : "部分用户"
+            },
+            "selectedUserNames": "可见用户",
+            "selectReaders": "选择可阅读的人",
+            "setReadLimitType": "设置阅读权限",
+            "person": "人",
+            "message": {
+                "noUserSelected": "请选择至少一个用户！"
+            }
+        },
+        "date": {
+            "YYYYMM": "{{YYYY}}年{{MM}}月",
+            "MMDD": "{{MM}}月{{DD}}日",
+            "today": "今天",
+            "yesterday": "昨天",
+            "daily": "每天",
+            "weeekly": "每周",
+            "monthly": "每月",
+            "day": "日",
+            "days": "天",
+            "hours": "小时"
+        },
+        "portal": {
+            "title": "主页",
+            "content": "请稍候......"
+        },
+        "login": {
+            "title": "登录",
+            "loginId": "账号",
+            "password": "密码",
+            "autoLogin": "保持登录状态",
+            "server": "服务器",
+            "iscsys": "日本Intalinx",
+            "intalinx_cn": "中国Intalinx",
+            "login": "登录",
+            "message": {
+                "error": {
+                    "title": "错误",
+                    "idOrPasswordNotCorrect": "您输入的帐号或密码有误！"
+                }
+            }
+        },
+        "profile": {
+            "title": "用户资料",
+            "oldPassword": "现在的密码",
+            "newPassword": "设置新密码",
+            "confirmPassword": "确认新密码",
+            "changeAvatar": "修改头像",
+            "changePassword": "修改密码",
+            "message": {
+                "error": {
+                    "title": "错误",
+                    "emptyPassword": "密码不能为空。",
+                    "mismatchPassword": "两次输入的密码不一致！",
+                    "mismatchCurrentPassword": "输入的密码与当前密码不一致！",
+                    "avatarTooLarge": "您上传的头像图片太大！"
+                },
+                "success": {
+                    "changeAvatar": "头像上传成功！"
+                },
+                "loading": {
+                    "avatarLoading": "头像加载中......",
+                    "avatarUploading": "头像上传中......"
+                }
+            }
+        },
+        "info": {
+            "title": "Info"
+        },
+        "blog": {
+            "title": "博客",
+            "detail": "博客内容",
+            "addBlog": "写博客",
+            "add": "新建博客",
+            "blogTitile": "标题",
+            "blogContent": "内容",
+            "newBlog": "新",
+            "newReturn": "新",
+            "isSaving": "保存中......",
+            "comment": {
+                "add": "发评论",
+                "content": "写评论...",
+                "reply": "发送"
+            },
+            "message": {
+                "error": {
+                    "title": "错误",
+                    "noContent": "请输入内容！",
+                    "pictureTooLarge": "您上传的图片太大！",
+                    "attachmentTooLargeTodownload": "请通过电脑网页版下载以上附件！",
+                    "savePicture": "图片保存失败。"
+                },
+                "success": {
+                    "savePicture": "图片保存成功。"
+                },
+                "warning": {
+                    "deleteBlog": "您确定要删除这篇博客吗？",
+                    "deleteReplyContent": "您确定要删除这条评论吗？"
+                }
+            }
+        },
+        "notification": {
+            "title": "通知",
+            "detail": "通知内容",
+            "newNotification": "新"
+        },
+        "survey": {
+            "title": "问卷调查",
+            "newSurvey": "新",
+            "detail": "问卷调查内容",
+            "optionContent": "注释",
+            "answerSurvey": "提交",
+            "answerSurveyAgain": "修改",
+            "result": "结果",
+            "completedStatus": "收集结束",
+            "collectionPeriod": "收集时间:",
+            "untilToday": "今天截止",
+            "lastDays": "剩余{{days}}天",
+            "optionResultDetail": "选项结果明细"
+        },
+        "about": {
+            "title": "关于本应用",
+            "version": "版本",
+            "latestVersion": "最新版本",
+            "new": "New"
+        },
+        "schedule": {
+            "title": "日程表",
+            "event": {
+                "title": "标题", 
+                "schedule": "活动",
+                "start": "开始",
+                "end": "结束",
+                "startDate": "开始日期",
+                "endDate": "结束日期",
+                "startTime": "开始时间",
+                "endTime": "结束时间",
+                "allDay": "全天",
+                "repeat": "重复", 
+                "category": "类型",
+                "location": "位置",
+                "summary": "内容",
+                "participant": "参加者",
+                "device": "设施",
+                "createUser": "创建者",
+                "updateUser": "更新者"
+            },
+            "repeatRules": {
+                "title": "重复频率", 
+                "weekDay": "星期", 
+                "monthDay": "日期", 
+                "daily": "每天", 
+                "weekly": "每周", 
+                "monthly": "每月"
+            },
+            "visibility": {
+                "title": "公开权限",
+                "public": "公开",
+                "confidential": "部分公开",
+                "private": "不公开",
+                "invisible": "[未公开]"
+            },
+            "time": "时间",
+            "colon": "：",
+            "selectDevices": "选择设施",
+            "selectParticipants": "选择参加者",
+            "selectUser": {
+                "title": "选择他人",
+                "group": "分组",
+                "organization": "部门"
+            },
+            "devices": {
+                "title": "设施一览"
+            },
+            "index": {
+                "allDay": "全天",
+                "mySchedule": "我"
+            },
+            "eventDetail": {
+                "title": "活动详情",
+                "delete": "删除"
+            },
+            "editEvent": {
+                "title": {
+                    "new": "新建活动", 
+                    "edit": "编辑活动"
+                },
+                "saveEvent": {
+                    "new": "追加", 
+                    "edit": "保存"
+                },
+                "message": {
+                    "eventTitleNecessary": "请为活动输入标题", 
+                    "endTimeShouldBeLater": "结束时间需要在开始时间之后",
+                    "repeatEndTimeShouldBeLater": "重复的结束时间需要在开始时间之后",
+                    "addEventSuccess": "活动已保存",
+                    "updateEventSuccess": "活动已更新",
+                    "undoChanged": "是否放弃已编辑的数据？"
+                },
+                "selectRepeatEventUpdateFlag": "请选择本次更新的活动", 
+                "selectAll": "更新所有重复活动", 
+                "selectSpecial": "只更新当前选择的活动"
+            },
+            "deleteEvent": "删除活动",
+            "deleteRepeatEvent": {
+                "deleteEventOfSelectedDay": "仅删除当天的活动",
+                "deleteAllEvents": "删除所有的活动"
+            }
+        },
+        "biznavi": {
+            "title": "业务Navi"
+        },
+        "addressBook": {
+            "title": "通讯录",
+            "detail": "详细信息",
+            "list-title":"公司内部通讯录",
+            "saveError":"通讯录保存失败。",
+            "saveSuccess":"通讯录保存成功。"
+        }
+    }
+}

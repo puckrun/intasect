@@ -1,0 +1,126 @@
+/*@import "../pages/blog/index/index";
+@import "../pages/notification/index/index";
+@import "../pages/survey/index/index";
+@import "../pages/profile/index/index";
+@import "../pages/about/about";
+@import "../pages/schedule/index/index";
+@import "../pages/schedule/devices/devices";*/
+
+
+/*@font-face {
+  font-family: 'biznavi';
+  src:  url('../../assets/fonts/biznavi.eot?agf1ss');
+  src:  url('../../assets/fonts/biznavi.eot?agf1ss#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/biznavi.ttf?agf1ss') format('truetype'),
+    url('../../assets/fonts/biznavi.woff?agf1ss') format('woff'),
+    url('../../assets/fonts/biznavi.svg?agf1ss#biznavi') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+page-portal {
+    ion-navbar {
+        .bar-button-default {
+            color: $primary-color-text;
+            padding: 6px;
+        }
+        .bar-button-default:hover:not(.disable-hover) {
+            color: $primary-color-light;
+        }
+        .bar-button-default.disable-hover:disabled {
+            opacity: 0.4;
+            cursor: default !important;
+            pointer-events: none;
+        }
+        .toolbar-title {
+            color: $primary-color-text;
+        }
+        .toolbar-background {
+            background-color: $primary-color;
+        }
+    }
+
+    .menu {
+        [class^="icon-"], [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'biznavi' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-navi {
+            &:before {
+                content: "\e900";
+                min-height: 2.4rem;
+                font-size: 1.3rem;
+                line-height: 1;
+            }
+            margin-top: 8px;
+        }
+        ion-card {
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            border-radius: 0px;
+            width: 100%;
+            * {
+                color: $primary-color-text;
+                background-color: $primary-color;
+            }
+        }
+        ion-avatar{
+            img {
+                max-width: 8rem;
+                max-height: 8rem;
+                border-radius: 8rem;
+                min-width: 8rem;
+                min-height: 8rem;
+            }    
+        } 
+        ion-badge {
+            background-color: $accent-color;
+        }
+        button.item {
+            ion-label{
+                color: $primary-text-color;
+            }
+            .item-inner {
+                background-image: none;
+                padding-right: 16px ;
+            }
+        } 
+    }
+    .biznavi-badge {
+        background-color: $accent-color;
+        position: relative;
+        left: -1rem;
+        top: -0.5rem;
+    }
+    .button-fab {
+        z-index: 1;
+        opacity: 0.9; 
+    }
+    .loading {
+        text-align: center;
+    }
+    button :disabled {
+        color: $divider-color;
+    }
+    input[type], textarea, .selectable {
+        -webkit-user-select: auto;
+    }
+    textarea {
+        resize: none;
+    }
+    .item-input.ng-valid.input-has-value::after {
+        border-bottom-color: $primary-color; 
+    }
+}

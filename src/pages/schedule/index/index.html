@@ -1,0 +1,111 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{!selectedOtherUserName ? ("app.schedule.title"|translate) : (selectedOtherUserName)}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content no-border class="month-calendar">
+    <div class="calendar-top-toolbar">
+        <button ion-button icon-only clear class="previous-month" (click)="showPreviousMonth()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        <ion-datetime class="change-month" displayFormat="YYYY/MM" min={{minDisplayDate}} max={{maxDisplayDate}} (ionChange)="changeCalendar($event)" [(ngModel)]="currentYearMonthText"
+            cancelText='{{ "app.action.cancel" | translate }}' doneText='{{ "app.action.done" | translate }}'></ion-datetime>
+        <button ion-button icon-only clear class="next-month" (click)="showNextMonth()">
+            <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+        <div class="blank"></div>
+        <button ion-button icon-only clear class="add-event" (click)="addEvent()">
+            <ion-icon name="md-add"></ion-icon>
+        </button>
+    </div>
+    <div class="week-names">
+        <div class="week-days" *ngFor="let weekday of weekdays" [ngClass]="{'weekends': (isFirstDayMonday==false && (weekday==weekdays[0] || weekday==weekdays[6])) || (isFirstDayMonday==true && (weekday==weekdays[5] || weekday==weekdays[6]))}">{{weekday}}</div>
+    </div>
+    <ion-slides #calendarSlides (ionSlideDidChange)="changeMonth($event)" direction="horizontal">
+        <ion-slide class="calendar">
+            <div class="days">
+                <div class="day" *ngFor="let day of perviousMonthDaysArray">
+                    <div class="default" [ngClass]="{'not-this-month': day.format('YYYY-MM')!=perviousYearMonthText,
+                                'today': day.format('YYYY/MM/D')==today,
+                                'weekends': day.format('d')==6 || day.format('d')==0,
+                                'hover': day.format('YYYY/MM/D')==selectedDay}">
+                        <span>{{day.format('D')}}</span>
+                    </div>
+                    <ion-badge class="day-has-events" [style.visibility]="'hidden'">
+                    </ion-badge>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide class="calendar">
+            <div class="days">
+                <div class="day" *ngFor="let day of currentMonthDaysArray" (click)="getEventsAndSpecialDaysBySelectedDay(day.format('YYYY/MM/D'))">
+                    <div class="default" [ngClass]="{'not-this-month': day.format('YYYY-MM')!=currentYearMonthText,
+                                'today': day.format('YYYY/MM/D')==today,
+                                'weekends': day.format('d')==6 || day.format('d')==0,
+                                'hover': day.format('YYYY/MM/D')==selectedDay}">
+                        <span>{{day.format('D')}}</span>
+                    </div>
+                    <ion-badge class="day-has-events" [style.visibility]="day.format('YYYY-MM')==currentYearMonthText && (eventsByDays.has(day.format('YYYY/MM/D'))||specialDaysByDays.has(day.format('YYYY/MM/D'))) ? 'visible' : 'hidden'">
+                    </ion-badge>
+                </div>
+            </div>
+            <div class="events">
+                <div class="loading" [hidden]="isEventLoadCompleted!=false">
+                    <ion-spinner name="dots"></ion-spinner>
+                </div>
+                <ion-list [hidden]="isEventLoadCompleted==false">
+                    <ion-item *ngFor="let specialDay of specialDays">
+                        <ion-row>
+                            <ion-col text-right col-3 class="border-right-solid" [ngClass]="{'border-right-green': specialDay.type=='JP',
+                                    'border-right-red': specialDay.type=='CN',
+                                    'border-right-primary': specialDay.type=='US'}">
+                                <ion-row>{{ "app.schedule.index.allDay" | translate }}</ion-row>
+                            </ion-col>
+                            <ion-col col-9>{{specialDay.specialDayName}}</ion-col>
+                        </ion-row>
+                    </ion-item>
+                    <ion-item *ngFor="let event of events" (click)="openEventDetail(event)">
+                        <ion-row [ngClass]="{'event-in-past-time': selectedDay==today&&event.isAllDay!='true'&&moment>event.endTime}">
+                            <ion-col col-3 class="border-right-solid border-right-default">
+                                <ion-row [hidden]="event.isAllDay!='true'">{{ "app.schedule.index.allDay" | translate }}</ion-row>
+                                <ion-row [hidden]="event.isAllDay=='true'">{{event.startTime}}</ion-row>
+                                <ion-row [hidden]="event.isAllDay=='true'">{{event.endTime}}</ion-row>
+                            </ion-col>
+                            <ion-col col-9 class="event-title">{{(event.visibility === 'public' || isAdmin || event.isSelf == 'true') ? event.title : ( "app.schedule.visibility.invisible" | translate)}}</ion-col>
+                        </ion-row>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </ion-slide>
+        <ion-slide class="calendar">
+            <div class="days">
+                <div class="day" *ngFor="let day of nextMonthDaysArray">
+                    <div class="default" [ngClass]="{'not-this-month': day.format('YYYY-MM')!=nextYearMonthText,
+                                'today': day.format('YYYY/MM/D')==today,
+                                'weekends': day.format('d')==6 || day.format('d')==0,
+                                'hover': day.format('YYYY/MM/D')==selectedDay}">
+                        <span>{{day.format('D')}}</span>
+                    </div>
+                    <ion-badge class="day-has-events" [style.visibility]="'hidden'">
+                    </ion-badge>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="calendar-bottom-toolbar">
+        <button ion-button icon-only clear (click)="selectUser()">
+            <ion-icon name="ios-people"></ion-icon>
+        </button>
+        <button ion-button clear [hidden]="selectedDay==today" (click)="showToday()">
+            {{ "app.date.today" | translate }}
+        </button>
+        <button ion-button clear [hidden]="userID==myUserID" (click)="showMySchedule()">
+            {{ "app.schedule.index.mySchedule" | translate }}
+        </button>
+    </ion-toolbar>
+</ion-footer>

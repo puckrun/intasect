@@ -1,0 +1,32 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP:Header>
+      <header xmlns="http://schemas.cordys.com/General/1.0/">
+         <Logger />
+      </header>
+      <i18n:international xmlns:i18n="http://www.w3.org/2005/09/ws-i18n">
+         <locale xmlns="http://www.w3.org/2005/09/ws-i18n">ja</locale>
+      </i18n:international>
+   </SOAP:Header>
+   <SOAP:Body>
+      <SaveSurveyParticipantResult xmlns="http://schemas.intasect.co.jp/generictools/service/Survey" preserveSpace="no" qAccess="0" qValues="">
+         <surveyParam>
+            <SurveyInput>
+               <surveyID />
+               <title />
+               <content />
+               <startDate />
+               <endDate />
+               <selectionType />
+               <status />
+               <createUser />
+               <participantResults>
+                  <participantID />
+                  <optionID />
+                  <optionContent />
+                  <surveyID />
+               </participantResults>
+            </SurveyInput>
+         </surveyParam>
+      </SaveSurveyParticipantResult>
+   </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,7 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetCommunityDetailByCommunityID xmlns="http://schemas.intasect.co.jp/generictools/service/Community" preserveSpace="no" qAccess="0" qValues="">
+      <communityID />
+    </GetCommunityDetailByCommunityID>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,24 @@
+page-survey-option-result-detail {
+    .option-result-detail {
+        h2 {
+            display: block;
+            line-height: 1.8;
+            font-size: 2.0rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .participant-name {
+            line-height: 1.8;
+            font-size: 1.6rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .participant-content {
+            padding-left: 16px;
+        }
+    }
+}
+
+

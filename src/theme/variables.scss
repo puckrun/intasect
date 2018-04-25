@@ -1,0 +1,100 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$primary-color-dark:   #7B1FA2;
+$primary-color:        #A054E3;
+$primary-color-light:  #E1BEE7;
+$primary-color-text:   #FFFFFF;
+$secondary-color:      #A054E3;
+$accent-color:         #FF5722;
+$top-arrow-color:      #727272;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+$danger-color:         #F44336;
+$warn-color:           #FF8C00;
+
+
+$colors: (
+  primary:    $primary-color,
+  secondary:  $secondary-color,
+  accent:     $accent-color,
+  danger:     $danger-color,
+  light:      $primary-color-light,
+  dark:       $primary-color-dark,
+  favorite:   $accent-color,
+  primary-text: $primary-text-color,
+  top :       $top-arrow-color,
+  warn:       $warn-color
+);
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";
+
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('../assets/fonts/roboto-regular?agf1ss');
+  src:  
+    url('../assets/fonts/roboto-regular.eot') format('embedded-opentype'),
+    url('../assets/fonts/roboto-regular.ttf') format('truetype'),
+    url('../assets/fonts/roboto-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'biznavi';
+  src:  url('../assets/fonts/biznavi.eot?agf1ss');
+  src:  url('../assets/fonts/biznavi.eot?agf1ss#iefix') format('embedded-opentype'),
+    url('../assets/fonts/biznavi.ttf?agf1ss') format('truetype'),
+    url('../assets/fonts/biznavi.woff?agf1ss') format('woff'),
+    url('../assets/fonts/biznavi.svg?agf1ss#biznavi') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

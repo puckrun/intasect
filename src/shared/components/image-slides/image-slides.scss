@@ -1,0 +1,12 @@
+page-components-image-slides {
+	.image-slides {
+	    background-color: $primary-text-color;
+	    .swiper-pagination-bullet {
+	        background-color: $primary-color-text;
+	        opacity: 0.4;
+	    }
+	    .swiper-pagination-bullet-active {
+	        opacity: 1;
+	    }
+	}
+}

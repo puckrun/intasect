@@ -1,0 +1,261 @@
+{
+    "app": {
+        "message": {
+            "error": {
+                "title": "error",
+                "systemError": "An error occurred in this system.Please contact the system administrator.",
+                "faildToLogin": "Faild to login.",
+                "faildToDownload": "Faild to Download.",
+                "faildToExtract": "Faild to extract."
+            },
+            "info": {
+                "title": "info",
+                "versionTooOld": "We have a new version."
+            },
+            "warning": {
+                "title": "warning",
+                "logout": "logout?",
+                "updateToNewVersion": "Do you want to download the newest version?"
+            },
+            "loading": {
+                "downloading": "downloading .. ",
+                "extracting": "extracting .. "
+            }
+        },
+        "action": {
+            "logout": "Logout",
+            "edit": "Edit",
+            "delete": "Delete",
+            "save": "Save",
+            "ok": "ok",
+            "back": "back",
+            "cancel": "cancel",
+            "select": "select",
+            "yes": "yes", 
+            "no": "no", 
+            "done": "select",
+            "search": "search",
+            "preview": "preview",
+            "finish": "finish",
+            "savePicture": "save the picture"
+        },
+        "common": {
+            "readLimitType": {
+                "allUsers" : "all users",
+                "selectUsers" : "select users"
+            },
+            "selectedUserNames": "Selected Users",
+            "selectReaders": "Select Readers",
+            "setReadLimitType": "set read limit",
+            "person": "person",
+            "message": {
+                "noUserSelected": "Please select one user at least."
+            }
+        },
+        "date": {
+            "YYYYMM": "{{MM}}/{{YYYY}}",
+            "MMDD": "{{MM}}/{{DD}}",
+            "today": "Today",
+            "yesterday": "Yesterday",
+            "daily": "Daily",
+            "weeekly": "Weeekly",
+            "monthly": "Monthly",
+            "day": "",
+            "days": "days",
+            "hours": "hours"
+        },
+        "portal": {
+            "title": "Portal",
+            "content": "Under development. Will coming soon."
+        },
+        "login": {
+            "title": "Login",
+            "loginId": "Account",
+            "password": "Password",
+            "autoLogin": "Keep me logged in",
+            "server": "Server",
+            "iscsys": "Intalinx in Japan",
+            "intalinx_cn": "Intalinx in China",
+            "login": "Login",
+            "message": {
+                "error": {
+                    "title": "error",
+                    "idOrPasswordNotCorrect": "The id and password you entered don't match."
+                }
+            }
+        },
+        "profile": {
+            "title": "Profile",
+            "oldPassword": "Old password",
+            "newPassword": "New password",
+            "confirmPassword": "Verify password",
+            "changeAvatar": "Change avatar",
+            "changePassword": "Change password",
+            "message": {
+                "error": {
+                    "title": "error",
+                    "emptyPassword": "Password cannot be left empty.",
+                    "mismatchPassword": "Password mismatch. Ensure to enter the same password  in both the text boxes.",
+                    
+                    "avatarTooLarge": "Your avatar's file size is too large."
+                },
+                "success": {
+                    "changeAvatar": "Avatar has been changed successfully"
+                },
+                "loading": {
+                    "avatarLoading": "Avatar is loading, please wait...",
+                    "avatarUploading": "Avatar is uploading, please wait..."
+                }
+            }
+        },
+        "info": {
+            "title": "Info"
+        },
+        "blog": {
+            "title": "Blog",
+            "detail": "Detail Info",
+            "addBlog": "Add",
+            "add": "Add Blog",
+            "blogTitile": "title",
+            "blogContent": "content",
+            "newBlog": "new",
+            "newReturn": "new",
+            "isSaving": "Blog is Saving...",
+            "comment": {
+                "add": "Add Comment",
+                "content": "Comment Content",
+                "reply": "Reply"
+            },
+            "message": {
+                "error": {
+                    "title": "error",
+                    "noContent": "The content is required.",
+                    "pictureTooLarge": "Your avatar's file size is too large.",
+                    "attachmentTooLargeTodownload": "Please download these attachments on computer.",
+                    "savePicture": "Failed to save the picture. "
+                },
+                "success": {
+                    "savePicture": "The picture has been saved successfully."
+                },
+                "warning": {
+                    "deleteBlog": "Are you sure to delete this blog?",
+                    "deleteReplyContent": "Are you sure to this comment?"
+                }
+            }
+        },
+        "notification": {
+            "title": "Notification",
+            "detail": "Details",
+            "newNotification": "new"
+        },
+        "survey": {
+            "title": "Survey",
+            "newSurvey": "new",
+            "detail": "Detail",
+            "optionContent": "comment",
+            "answerSurvey": "answer",
+            "answerSurveyAgain": "modify",
+            "result": "Result",
+            "completedStatus": "completed",
+            "collectionPeriod": "collection period:",
+            "untilToday": "until today",
+            "lastDays": "last {{days}} days",
+            "optionResultDetail": "Option Result Detail"
+        },
+        "about": {
+            "title": "About",
+            "version": "Version",
+            "latestVersion": "Latest version",
+            "new": "New"
+        },
+        "schedule": {
+            "title": "Schedule",
+            "event": {
+                "title": "Title", 
+                "schedule": "Schedule",
+                "start": "Start",
+                "end": "End",
+                "startDate": "Start Date",
+                "endDate": "End Date",
+                "startTime": "Start Time",
+                "endTime": "End Time",
+                "allDay": "All Day",
+                "repeat": "Repeat", 
+                "category": "Category",
+                "location": "Location",
+                "summary": "Summary",
+                "participant": "Participants",
+                "device": "Devices",
+                "createUser": "Create User",
+                "updateUser": "Update User"
+            },
+            "repeatRules": {
+                "title": "Repeat Rule", 
+                "weekDay": "Weekday", 
+                "monthDay": "Date", 
+                "daily": "Daily", 
+                "weekly": "Weekly", 
+                "monthly": "Monthly"
+            },
+            "visibility": {
+                "title": "Visibility",
+                "public": "Public",
+                "confidential": "Limit Public",
+                "private": "Private",
+                "invisible": "[Invisible]"
+            },
+           "time": "Time",
+            "colon": "：",
+            "selectDevices": "Select Devices",
+            "selectParticipants": "Select Participants",
+            "selectUser": {
+                "title": "Select User",
+                "group": "Group",
+                "organization": "Organization"
+            },
+            "devices": {
+                "title": "Devices"
+            },
+            "index": {
+                "allDay": "all-day",
+                "mySchedule": "My Schedule"
+            },
+            "eventDetail": {
+                "title": "Event Detail",
+                "delete": "Delete The Event"
+            },
+            "editEvent": {
+                "title": {
+                    "new": "New Event", 
+                    "edit": "Edit Event"
+                },
+                "saveEvent": {
+                    "new": "Add", 
+                    "edit": "Save"
+                },
+                "message": {
+                    "eventTitleNecessary": "Please input the title of this event!",
+                    "endTimeShouldBeLater": "The end time should be later than start time!",
+                    "repeatEndTimeShouldBeLater": "The repeat start time should be later than start time!",
+                    "addEventSuccess": "The event had been saved.",
+                    "updateEventSuccess": "The event had been updated.",
+                    "undoChanged": "Do you want to giveup the changes?"
+                },
+                "selectRepeatEventUpdateFlag": "Please select the update object in this repeat event!", 
+                "selectAll": "All of the event", 
+                "selectSpecial": "Just the selected date"
+            },
+            "deleteEvent": "Delete Event",
+            "deleteRepeatEvent": {
+                "deleteEventOfSelectedDay": "Delete This Event of the Selected Day",
+                "deleteAllEvents": "Delete All Events"
+            }
+        },
+        "biznavi": {
+            "title": "BizNavi"
+        },
+        "addressBook":{
+            "title":"addressBook"
+        }
+    }
+}

@@ -1,0 +1,61 @@
+page-survey-detail {
+    .survey-detail {
+        .title {
+            line-height: 1.2;
+            font-size: 2.0rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .status {
+            color: #666;
+            .avatar img {
+                width: 6rem;
+                height: 6rem;
+            }
+            .time {
+                font-size: 12px;
+            }
+            ion-label {
+            margin: 0px;
+            }
+            .item-inner {
+            border-bottom: 0px;
+            }
+            .collection-status {
+                float: right;
+                padding-right: 16px;
+            }
+        }
+        .item-button {
+            color: #666;
+            padding: 0px;
+        }
+        .contents {
+            font-size: 1.6rem;
+        }
+        .options {
+            .checkbox-disabled, .item-checkbox-disabled ion-label, .text-input[disabled] {
+                opacity: 0.8;
+            }
+            .option-content {
+                width: 90%;
+                float: right;
+                border: 1px;
+                padding-right: 16px;
+                .item-inner {
+                    padding-right: 0px;
+                    .text-input {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+        ion-list {
+            .item:last-child, ion-item-sliding:last-child .item {
+                border-bottom: 0px;
+            }
+        }
+    }
+}
+

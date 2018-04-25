@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="close()">
+                {{"app.action.cancel" | translate}}
+            </button>
+        </ion-buttons>
+        <ion-title>{{"app.action.preview" | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="blog-preview">
+    <div>
+        <ion-item no-lines>
+            <h2 class="title">{{title}}</h2>
+        </ion-item>
+        <div class="contents" padding [innerHTML]="content"></div>
+    </div>
+</ion-content>
+<ion-fab bottom right #fab>
+    <button ion-fab color="top" class="blog-detail scroll-to-top" fab fab-right fab-bottom [hidden]="!isScrollToTopButtonVisible" (click)="scrollToDetailPageTop()">
+        <ion-icon name="arrow-up"></ion-icon>
+    </button>
+</ion-fab>

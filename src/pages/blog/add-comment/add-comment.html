@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ "app.blog.comment.add" | translate }}</ion-title>
+        <ion-buttons end>
+            <button ion-button class="save-comment" disabled={{isDisabled}} (click)="saveComment()">
+                {{ "app.blog.comment.reply" | translate }}
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="add-comment">
+    <ion-item>
+        <ion-textarea placeholder='{{ "app.blog.comment.content" | translate }}' [(ngModel)]="comment.content" (ngModelChange)="changeContent()"></ion-textarea>
+    </ion-item>
+    <ion-item class="selected-pictures" no-lines>
+        <ion-thumbnail *ngFor="let picture of pictures">
+            <button ion-button fab (click)="deletePicture(picture)">
+                <ion-icon name="close"></ion-icon>
+            </button>
+            <img src="{{picture.pictureSrc}}" />
+        </ion-thumbnail>
+    </ion-item>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="add-comment-toolbar">
+        <button ion-button icon-only right clear ><ion-icon name="camera"></ion-icon></button>
+        <input #fileInput type=file accept="image/*" multiple="multiple" (change)="addPicture($event)" class="upload-input" />
+    </ion-toolbar>
+</ion-footer>

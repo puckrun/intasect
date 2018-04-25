@@ -1,0 +1,5 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Body>
+        <GetDeviceList xmlns="http://schemas.intasect.co.jp/mycal/service/device" preserveSpace="no" qAccess="0" qValues="" />
+    </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,32 @@
+<ion-header class="login-header">
+    <ion-navbar class="login-navbar">
+        <div class="logo">
+            <h3 ion-text color="primary">IntaLin<b ion-text color="primary-text">X</b></h3>
+        </div>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="login">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <ion-item>
+            <ion-label floating>{{ "app.login.loginId" | translate }}</ion-label>
+            <ion-input type="text" name="user.loginID" [(ngModel)]="user.loginID" (ngModelChange)="changeUser($event)" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{ "app.login.password" | translate }}</ion-label>
+            <ion-input type="password" name="user.password" [(ngModel)]="user.password" (ngModelChange)="changeUser($event)" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+        <ion-item no-lines class="auto-login">
+            <ion-label>{{ "app.login.autoLogin" | translate }}</ion-label>
+            <ion-checkbox checked="false" name="user.autoLogin" [(ngModel)]="user.autoLogin" (ngModelChange)="changeUser($event)" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+        </ion-item>
+        <button ion-button disabled={{isDisabled}} full type="submit">{{ "app.login.login" | translate }}</button>
+    </form>
+</ion-content>
+<ion-footer>
+    <ion-item>
+        <ion-label>{{ "app.login.server" | translate }}</ion-label>
+        <ion-select multiple="false" interface="alert" okText='{{"app.action.ok" | translate}}' cancelText='{{"app.action.cancel" | translate}}' [(ngModel)]="user.server" (ngModelChange)="changeUser($event)">
+            <ion-option *ngFor="let server of servers" value={{server.url}}>{{server.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+</ion-footer>

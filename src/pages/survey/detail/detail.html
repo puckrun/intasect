@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"app.survey.detail" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button [hidden]="status=='COMPLETION'" [disabled]="selectedOption=='' || isDisabled==true" (click)="answerSurrvey()">{{initialSelectOption ? ("app.survey.answerSurveyAgain" | translate) : ("app.survey.answerSurvey" | translate) }}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="survey-detail">
+    <div class="loading" text-center [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+    <div [hidden]="!isLoadCompleted">
+        <ion-item no-lines>
+            <h2 class="title selectable">{{title}}</h2>
+        </ion-item>
+        <ion-item class="status">
+            <ion-avatar item-left class="avatar">
+                <img src="{{createUserAvatar}}" />
+            </ion-avatar>
+            <div class="name">{{createUserName}}</div>
+            <div class="time">
+                <span>{{createDate}}</span>
+                <span class="collection-status" *ngIf="status!='COMPLETION'">
+          {{survey.collectionStatus}}
+        </span>
+                <span item-right class="collection-status" *ngIf="status=='COMPLETION'">
+          {{"app.survey.completedStatus" | translate}}
+        </span>
+            </div>
+        </ion-item>
+        <div class="contents selectable" padding>
+            <div [innerHTML]="content"></div>
+        </div>
+        <div class="options" *ngFor="let option of options">
+            <ion-item no-lines>
+                <ion-label>{{option.optionName}}</ion-label>
+                <ion-checkbox [disabled]="status=='COMPLETION'" [(ngModel)]="option.isSelected" (ngModelChange)="changeSelectedOption(option)"></ion-checkbox>
+            </ion-item>
+            <ion-item class="option-content" [hidden]="option.inputFlag=='FALSE'">
+                <ion-label stacked>{{ "app.survey.optionContent" | translate }}</ion-label>
+                <ion-textarea [disabled]="status=='COMPLETION'" rows=2 [(ngModel)]="option.optionContent" (ngModelChange)="changeOptionContent(option)"></ion-textarea>
+            </ion-item>
+        </div>
+    </div>
+    <ion-fab bottom right #fab>
+        <button ion-fab color="warn" fab fab-right fab-bottom accent [hidden]="!isLoadCompleted || status=='COMPLETION'" (click)="showSurveyResult()">
+        <ion-icon name="stats"></ion-icon>
+    </button>
+        <button ion-fab color="top" class="scroll-to-top" fab fab-right fab-bottom [hidden]="!isScrollToTopButtonVisible" (click)="scrollToDetailPageTop()">
+        <ion-icon name="arrow-up"></ion-icon>
+    </button>
+    </ion-fab>
+</ion-content>

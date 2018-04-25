@@ -1,0 +1,20 @@
+page-schedule-select-devices {
+    ion-searchbar {
+        .searchbar-input {
+            padding-right: 0;
+        }
+        .searchbar-clear-icon {
+            display: none!important; 
+        }
+    }
+    .select-devices {
+        ion-list + ion-list {
+            margin-top: 0;
+        }
+    }
+    button[disabled]{
+        opacity: 0.4;
+    }
+}
+
+

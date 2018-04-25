@@ -1,0 +1,13 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Body>
+        <GetEventsForDeviceAndGroup xmlns="http://schemas.intasect.co.jp/mycal/service/event" preserveSpace="no" qAccess="0" qValues="">
+            <eventInputForDeviceAndGroup>
+                <EventInputForDeviceAndGroup>
+                    <startTime />
+                    <endTime />
+                    <selType />
+                </EventInputForDeviceAndGroup>
+            </eventInputForDeviceAndGroup>
+        </GetEventsForDeviceAndGroup>
+    </SOAP:Body>
+</SOAP:Envelope>

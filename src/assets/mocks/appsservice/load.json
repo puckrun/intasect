@@ -1,0 +1,42 @@
+[
+    {
+        "titleIcon": "home",
+        "title": "app.portal.title",
+        "componentsId": "portal"
+    },
+    {
+        "titleIcon": "ios-chatboxes",
+        "title": "app.info.title",
+        "componentsId": "info"
+    },
+    {
+        "titleIcon": "calendar",
+        "title": "app.schedule.title",
+        "componentsId": "schedule"
+    },
+    {
+        "titleIcon": "icon-navi",
+        "title": "app.biznavi.title",
+        "componentsId": "biznavi"
+    },
+    {
+        "titleIcon": "desktop",
+        "title": "app.schedule.devices.title",
+        "componentsId": "devices"
+    },
+    {
+        "titleIcon": "contact",
+        "title": "app.profile.title",
+        "componentsId": "profile"
+    },
+    {
+        "titleIcon": "information-circle",
+        "title": "app.about.title",
+        "componentsId": "about"
+    },
+    {
+        "titleIcon": "people",
+        "title": "app.addressBook.title",
+        "componentsId": "personalInfo"
+    }
+]

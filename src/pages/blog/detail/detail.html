@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"app.blog.detail" | translate}}</ion-title>
+        <ion-buttons end [hidden]="createUserID!=loginID">
+            <button ion-button icon-only (click)="showBlogOperations()"><ion-icon name="more"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="blog-detail">
+    <div class="loading" text-center [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+    <div [hidden]="!isLoadCompleted">
+        <ion-item no-lines>
+            <h2 class="title selectable">{{title}}</h2>
+        </ion-item>
+        <ion-item class="status">
+            <ion-avatar item-left class="avatar">
+                <img src="{{createUserAvatar}}" />
+            </ion-avatar>
+            <div class="name">{{createUserName}}</div>
+            <div class="time">
+                <span>{{createDate}}</span>
+                <button ion-button icon-only class="comment-count" disabled color="primary" clear>
+                    <ion-icon name="text"></ion-icon>
+                    <div>{{commentCount}}</div>
+                </button>
+                <button ion-button icon-only class="read-count" disabled color="primary" clear>
+                    <ion-icon name="eye"></ion-icon>
+                    <div>{{readCount}}</div>
+                </button>
+            </div>
+
+        </ion-item>
+        <div class="contents selectable" padding>
+            <div [innerHTML]="content"></div>
+            <img  *ngFor="let attachImage of attachImagesForDisplay" [src]="attachImage" />
+        </div>
+        <div padding-left class="attachment" flex-sm="100" *ngFor="let attachFile of attachFilesForDownload">
+            <span>{{attachFile.attachmentName}}</span><span class="file-size">{{attachFile.attachmentSize}}</span>
+        </div>
+        <div padding-left padding-bottom class="download-message" [hidden]="!hasAttachFilesForDownload">{{"app.blog.message.error.attachmentTooLargeTodownload" | translate}}</div>
+        <ion-list>
+            <ion-item class="comment" *ngFor="let comment of comments">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-item class="status">
+                            <ion-avatar item-left class="avatar">
+                                <img src="{{comment.userAvatar}}" />
+                            </ion-avatar>
+                            <div class="name">{{comment.userName}}</div>
+                            <div class="time">{{comment.createDate}}<a class="delete-comment" [hidden]="loginID!=comment.userID" (click)="showDeleteReplyContentConfirmMessage(comment)"><ion-icon name="trash"></ion-icon></a></div>
+                        </ion-item>
+                    </ion-card-header>
+                    <ion-card-content class="comment-content selectable">
+                        <div [innerHTML]="comment.content"></div>
+                        <img class="comment-image" *ngFor="let attachImage of comment.attachImagesForDisplay" [src]="attachImage" />
+                    </ion-card-content>
+                    <div padding-left class="attachment" flex-sm="100" *ngFor="let attachFile of comment.attachFilesForDownload">
+                        <span>{{attachFile.replyContentAttachmentName}}</span><span class="file-size">{{attachFile.replyContentAttachmentSize}}</span>
+                    </div>
+                    <div padding-left padding-bottom class="download-message" [hidden]="comment.attachFilesForDownload.length<=0">{{"app.blog.message.error.attachmentTooLargeTodownload" | translate}}</div>
+                </ion-card>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+    <ion-fab bottom right #fab>
+        <button ion-fab color="accent" [hidden]="!isLoadCompleted" (click)="addComment()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <button ion-fab color="top" class="scroll-to-top" [hidden]="!isScrollToTopButtonVisible" (click)="scrollToDetailPageTop()">
+            <ion-icon name="arrow-up"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

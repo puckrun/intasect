@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name='menu' menuToggle></ion-icon>
+        </button>        
+        <ion-title>{{"app.portal.title" | translate}}</ion-title>
+        <!--<ion-buttons end>
+            <ion-buttons>
+            <button (click)="openModal()">
+                業務Navi
+            </button>
+            <ion-badge class="biznavi-badge">0</ion-badge>
+            </ion-buttons>
+        </ion-buttons>-->
+    </ion-navbar>
+</ion-header>
+<ion-content class="portal">
+    <ion-card>
+        <ion-card-content>
+            {{"app.portal.content" | translate}}
+        </ion-card-content>
+    </ion-card>
+    <!--<ion-list>
+        <ion-item *ngFor="let app of apps">
+            <ion-thumbnail item-left>
+                <img src="{{app.icon}}">
+            </ion-thumbnail>
+            <h2>{{ app.title | translate}}</h2>
+            <button ion-button clear item-right (click)="appSelected(app)">詳細</button>
+        </ion-item>
+    </ion-list>-->
+</ion-content>

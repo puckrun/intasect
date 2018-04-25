@@ -1,0 +1,5 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetNotReadNotificationCountBySelf xmlns="http://schemas.intasect.co.jp/generictools/service/Notification" preserveSpace="no" qAccess="0" qValues="" />
+  </SOAP:Body>
+</SOAP:Envelope>

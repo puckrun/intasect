@@ -1,0 +1,15 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <UpdateCommunity xmlns="http://schemas.intasect.co.jp/generictools/service/Community" preserveSpace="no" qAccess="0" qValues="">
+      <communityParam>
+        <CommunityInput>
+          <communityID />
+          <title />
+          <content />
+          <allMemberFlag />
+          <status />
+        </CommunityInput>
+      </communityParam>
+    </UpdateCommunity>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,7 @@
+<ion-content class="image-slides">
+    <ion-slides [initialSlide]="index" loop="false" direction="horizontal" [pager]="hasPluralPages">
+        <ion-slide *ngFor="let image of images">
+            <img src="{{image.src}}" (click)="backToBlogDetail()" (press)="showPictureOperations(image)" />
+        </ion-slide>
+    </ion-slides>
+</ion-content>

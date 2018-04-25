@@ -1,0 +1,21 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <InsertReplyContent xmlns="http://schemas.intasect.co.jp/generictools/service/Community" preserveSpace="no" qAccess="0" qValues="">
+      <replyContentParam>
+        <ReplyContentInput>
+          <replyContentID />
+          <content />
+          <communityID />
+          <replyContentAttachFileList>
+            <replyContentID />
+            <replyContentAttachmentPath />
+            <replyContentAttachmentContent />
+            <replyContentAttachmentName />
+            <replyContentAttachmentSize />
+            <replyContentAttachmentID />
+          </replyContentAttachFileList>
+        </ReplyContentInput>
+      </replyContentParam>
+    </InsertReplyContent>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ "app.blog.add" | translate }}</ion-title>
+        <ion-buttons end>
+            <button ion-button class="button-left" (click)="saveBlog()" [disabled]="isDisabled">{{ "app.action.save" | translate }}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="add-blog">
+    <ion-item>
+        <ion-input placeholder='{{ "app.blog.blogTitile" | translate }}' [(ngModel)]="blog.title" (ngModelChange)="changeBlog()"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+        <ion-textarea placeholder='{{ "app.blog.blogContent" | translate }}' rows=8 [(ngModel)]="blog.content" (ngModelChange)="changeBlog()"></ion-textarea>
+    </ion-item>
+    <ion-item class="selected-pictures" no-lines>
+        <ion-thumbnail *ngFor="let picture of pictures">
+            <button ion-button fab (click)="deletePicture(picture)">
+                <ion-icon name="close"></ion-icon>
+            </button>
+            <img src="{{picture.pictureSrc}}" />
+        </ion-thumbnail>
+    </ion-item>
+    <ion-list>
+        <button ion-item (click)="selectReadLimitType()">
+            <ion-icon name="md-globe" item-left></ion-icon>
+            <p>{{ "app.common.setReadLimitType" | translate }}</p>
+            <p item-right>{{readLimit.readLimitTypeName}}<span [hidden]="readLimit.readLimitType=='allUsers' || !sendDataToSelectReadLimitTypePage.selectedUsers">{{sendDataToSelectReadLimitTypePage.selectedUsers.length}}{{"app.common.person" | translate}}</span></p>
+        </button>
+    </ion-list>
+    <ion-item [hidden]="readLimit.readLimitType=='allUsers'">
+        <h2>{{ "app.common.selectedUserNames" | translate }}</h2>
+        <div class="selected-users" *ngFor="let selectedUser of blog.selectedUsers">{{selectedUser.userName}}</div>
+    </ion-item>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="add-blog-toolbar">
+        <button ion-button clear (click)="previewBlog()">{{ "app.action.preview" | translate }}</button>
+        <button ion-button icon-only clear><ion-icon name="camera"></ion-icon></button>
+        <input #fileInput type=file accept="image/*" multiple="multiple" (change)="addPicture($event)" class="upload-input" />
+    </ion-toolbar>
+</ion-footer>

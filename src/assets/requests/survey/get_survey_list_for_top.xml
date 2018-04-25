@@ -1,0 +1,8 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetSurveyListForTop xmlns="http://schemas.intasect.co.jp/generictools/service/Survey" preserveSpace="no" qAccess="0" qValues="">
+      <cursor id="0" position="0" numRows="5" maxRows="99999" sameConnection="false" />
+      <keyWord />
+    </GetSurveyListForTop>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="close()">
+                {{"app.action.cancel" | translate}}
+            </button>
+        </ion-buttons>
+        <ion-title>{{"app.schedule.selectUser.title" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="selectUsers()" [disabled]="selectedUserCount<=0">
+                {{"app.action.done" | translate}}
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-searchbar (input)="findUsers($event)" [showCancelButton]=false placeholder='{{"app.action.search" | translate}}'>
+        <ion-icon name="search"></ion-icon>
+    </ion-searchbar>
+</ion-header>
+<ion-content padding class="select-user">
+    <div [hidden]="groupingApproach == 'group'">
+        <ion-list [hidden]="isSearching!=true">
+            <ion-item *ngFor="let user of foundUserMembers">
+                <ion-checkbox [(ngModel)]="user.isSelected" (ngModelChange)="changeSelectedUser(user)"></ion-checkbox>
+                <!--<ion-avatar item-left>
+                    <img src="img/default">
+                </ion-avatar>-->
+                <ion-label>{{user.userName}}</ion-label>
+            </ion-item>
+        </ion-list>
+        <ion-item-group [hidden]="isSearching==true" *ngFor="let orgWithUsers of orgsWithUsers">
+            <ion-item-divider>{{orgWithUsers.organizationName}}</ion-item-divider>
+            <ion-item *ngFor="let user of orgWithUsers.users">
+                <ion-checkbox [(ngModel)]="user.isSelected" (ngModelChange)="changeSelectedUser(user)"></ion-checkbox>
+                <!--<ion-avatar item-left>
+                    <img src="img/default">
+                </ion-avatar>-->
+                <ion-label>{{user.userName}}</ion-label>
+            </ion-item>
+        </ion-item-group>
+    </div>
+    <div [hidden]="groupingApproach == 'organization'">
+        <ion-list [hidden]="isSearching!=true">
+            <ion-item *ngFor="let user of foundUserMembers">
+                <ion-checkbox [(ngModel)]="user.isSelected" (ngModelChange)="changeSelectedUser(user)"></ion-checkbox>
+                <!--<ion-avatar item-left>
+                    <img src="img/default">
+                </ion-avatar>-->
+                <ion-label>{{user.userName}}</ion-label>
+            </ion-item>
+        </ion-list>
+        <ion-item-group [hidden]="isSearching==true" *ngFor="let groupWithUsers of groupsWithUsers">
+            <ion-item-divider>{{groupWithUsers.groupName}}</ion-item-divider>
+            <ion-item *ngFor="let user of groupWithUsers.users">
+                <ion-checkbox [(ngModel)]="user.isSelected" (ngModelChange)="changeSelectedUser(user)"></ion-checkbox>
+                <!--<ion-avatar item-left>
+                    <img src="img/default">
+                </ion-avatar>-->
+                <ion-label>{{user.userName}}</ion-label>
+            </ion-item>
+        </ion-item-group>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar class="calendar-bottom-toolbar">
+        <ion-segment class="select-user-bottom-toolbar" [(ngModel)]="groupingApproach" (ionChange)="onSegmentChanged()">
+            <ion-segment-button class="segment-without-border" value="group">
+                {{ "app.schedule.selectUser.group" | translate }}
+            </ion-segment-button>
+            <ion-segment-button class="segment-without-border" value="organization">
+                {{ "app.schedule.selectUser.organization" | translate }}
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-footer>

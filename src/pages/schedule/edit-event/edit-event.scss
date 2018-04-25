@@ -1,0 +1,78 @@
+page-schedule-edit-event {
+    .edit-event {
+        $sub-catalogue-margin: 35px;
+        
+        ion-datetime {
+            padding-left : 0px;
+            padding-right : 0px;
+            margin-right: 8px;
+        }
+        
+        .item-input ion-label, 
+        .item-select ion-label, 
+        .item-datetime ion-label{
+            color: #000;
+        }
+        
+        .separation-section {
+            height: 20px;
+            // background: #D3D3D3;// LightGrey
+        }
+        
+        .repeat-section {
+            margin-left: $sub-catalogue-margin;
+        }
+        
+        .participants {
+            .participant-title {
+                font-size: 1.8rem;
+                color: #000;
+            }
+            .participant-list {
+                margin-left: 53px;// $sub-catalogue-margin;
+                margin-bottom: 5px;
+                line-height: 30px;
+                .participant-name {
+                    float: left;
+                    text-align: left;
+                    color: #000;
+                    font-size: 1.6rem;
+                    padding: 0;
+                    width: 40%;
+                }
+            }
+            
+            button.item:not([detail-none]) .item-inner,
+            a.item:not([detail-none]) .item-inner,
+            .item[detail-push] .item-inner {
+                background-size: 0px, 0px;
+            }
+            
+            .ion-md-arrow-forward:before {
+                content: "\f3d1";
+            }
+        }
+        
+        .devices {
+            .device-title {
+                font-size: 1.8rem;
+                color: #000;
+            }
+            .device-list {
+                margin-left: $sub-catalogue-margin;
+            }
+            
+            button.item:not([detail-none]) .item-inner,
+            a.item:not([detail-none]) .item-inner,
+            .item[detail-push] .item-inner {
+                background-size: 0px, 0px;
+            }
+            
+            .ion-md-arrow-forward:before {
+                content: "\f3d1";
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,15 @@
+{
+  "name": "intalinx-mobile",
+  "app_id": "0d12c3fe",
+  "proxies": [
+    {
+      "path": "/home/InternalSystem/",
+      "proxyUrl": "https://iscsys.intasect.co.jp/home/InternalSystem/",
+      "_proxyUrl": "http://192.168.11.29/home/InternalSystem/"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

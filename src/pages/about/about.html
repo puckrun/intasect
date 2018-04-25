@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{"app.about.title" | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="about">
+    <ion-card>
+        <div class="center">    
+            <img src="./assets/img/favicon.png" class="version-icon"/>
+        </div>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <h2>{{version}}</h2>
+                    <p>{{"app.about.version" | translate}}</p>
+                </ion-item>
+                <a ion-item [attr.detail-none]="version==latestVersion" [href]="upgradeUrl" (click)="openUpgradeUrl()">
+                    <h2>
+                        <span>{{latestVersion}}</span>
+                        <ion-badge *ngIf="version!=latestVersion" class="new">{{"app.about.new" | translate}}</ion-badge>
+                    </h2>
+                    <p>{{"app.about.latestVersion" | translate}}</p>
+                </a>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

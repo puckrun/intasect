@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"app.survey.result" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="survey-result">
+  <div class="loading" text-center [hidden]="isLoadCompleted">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+  <div [hidden]="!isLoadCompleted">
+    <div no-lines *ngFor="let surveyOptionResult of surveyOptionResults; let i=index;" (click)="showOptionResultDetailOfOption(surveyOptionResult)">
+      <p>{{surveyOptionResult.optionName}} ({{surveyOptionResult.participantResults.length}}{{"app.common.person" | translate}})</p>
+      <progress class="color{{i}}" max={{participantTotalCount}} value={{surveyOptionResult.participantResults.length}}></progress>
+      <span item-right>{{surveyOptionResult.participantResults.length / participantTotalCount | percent:'1.0-2'}}</span>
+    </div>
+    <a [hidden]="survey.status!='COMPLETION'" (click)="showSurveyDetail()">{{"アンケート詳細" | translate}}</a>
+  </div>
+</ion-content>

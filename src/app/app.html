@@ -1,0 +1,25 @@
+<ion-menu [content]="nav" class="menu">
+    <ion-content>
+        <ion-list no-lines>
+            <ion-card color="secondary">
+                <ion-item>
+                    <ion-avatar item-left>
+                        <img src={{user.userAvatar}} />
+                    </ion-avatar>
+                    <span>{{user.userName}}</span>
+                </ion-item>
+            </ion-card>
+            <button ion-item *ngFor="let item of menus" (click)="openPage(item)">
+                <ion-icon *ngIf="item.componentsId !== 'biznavi'" name={{item.titleIcon}} item-left color="primary"></ion-icon>
+                <ion-icon *ngIf="item.componentsId === 'biznavi'" class="icon-navi" item-left color="primary"></ion-icon>{{item.title | translate}}
+                <ion-badge class="ion-badge" item-right *ngIf="item.componentsId === 'info' && share.blogNewInformationCount+share.notificationNewInformationCount+share.surveyNewInformationCount>0">
+                    {{share.blogNewInformationCount+share.notificationNewInformationCount+share.surveyNewInformationCount}}
+                </ion-badge>
+            </button>
+                    <button ion-item (click)="logout()">
+                <ion-icon name="log-out" item-left color="primary"></ion-icon>{{"app.action.logout" | translate}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav #nav [root]="rootPage" swipe-back-enabled="false"></ion-nav>

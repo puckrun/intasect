@@ -1,0 +1,86 @@
+page-blog-detail {
+    .blog-detail {
+        .title {
+            line-height: 1.2;
+            font-size: 2.0rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .status {
+            color: #666;
+	    padding-right: 16px;
+            .avatar img {
+                width: 6rem;
+                height: 6rem;
+            }
+            .time {
+                font-size: 12px;
+            }
+            ion-label {
+            margin: 0px;
+            }
+            .item-inner {
+            border-bottom: 0px;
+            }
+	    .read-count, .comment-count {
+            float: right;
+      	    }
+        }
+        .item-button {
+            color: #666;
+            padding: 0px;
+	    height: 14px;
+        }
+        .contents {
+            font-size: 1.6rem;
+        }
+        .comment {
+            .item-inner {
+                border: 0px;
+                ion-label {
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                    .comment-image, dynamic-content img {
+                        padding-top: 4px;
+                    }
+                }
+                .avatar {
+                    font-size: 2em;
+                    color: #eee;
+                }
+                ion-card {
+                    margin: 2px;
+                    width: auto;
+		     .delete-comment {
+	                    color: grey;
+	                    float: right;
+	                    ion-icon {
+	                    	font-size: 1.4em;
+	             		}
+	             }
+                    ion-card-content {
+                        white-space: normal;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        ion-list {
+            .item:last-child, ion-item-sliding:last-child .item {
+                border-bottom: 0px;
+            }
+        }
+        .attachment {
+            color: #666;
+            .file-size {
+                padding-left: 4px;
+            }
+        }
+        .download-message {
+            font-size: 1.2rem;
+            color: #666;
+        }
+    }
+}
+

@@ -1,0 +1,7 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <DownloadReplyContentAttachmentByreplyContentAttachmentID xmlns="http://schemas.intasect.co.jp/generictools/service/Community" preserveSpace="no" qAccess="0" qValues="">
+      <replyContentAttachmentID>PARAMETER</replyContentAttachmentID>
+    </DownloadReplyContentAttachmentByreplyContentAttachmentID>
+  </SOAP:Body>
+</SOAP:Envelope>

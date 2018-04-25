@@ -1,0 +1,5 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP:Body>
+      <GetUserDetails xmlns="http://schemas.cordys.com/UserManagement/1.0/User" />
+   </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{"app.notification.title" | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="notification-index">
+    <div class="loading" text-center [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+	<ion-searchbar (input)="serachNotifications($event)" *ngIf="isLoadCompleted&&isShowSearchBar" showCancelButton=false placeholder='{{"app.action.search" | translate}}'>
+        <ion-icon name="search"></ion-icon>
+    </ion-searchbar>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="circles"> </ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+        <button ion-item detail-none (click)="openDetail(notification)" *ngFor="let notification of notificationListForTop">
+            <ion-avatar item-left>
+                <img src="{{notification.createUserAvatar}}" />
+            </ion-avatar>
+            <p>{{notification.createUserName}}</p>
+            <h2 class="title {{(notification.priorityLevel == 'HIGH') ? 'high-priority' : ''}}">{{notification.title}}</h2>
+            <div item-right class="status">
+                <ion-badge class="new" *ngIf="notification.readStatus=='NOT_READ'">{{"app.notification.newNotification" | translate}}</ion-badge>
+                <p>{{notification.publishStartDate}}</p>
+            </div>
+        </button>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <ion-fab bottom right #fab>
+        <button ion-fab color="top" fab fab-right fab-bottom [hidden]="!isScrollToTopButtonVisible" (click)="scrollToIndexPageTop()">
+            <ion-icon name="arrow-up"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

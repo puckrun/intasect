@@ -1,0 +1,41 @@
+page-notification-detail {
+    .notification-detail {
+        .title {
+            font-size: 2.0rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .status {
+            color: #666;
+            .avatar img {
+                width: 4rem;
+                height: 4rem;
+            }
+            .time {
+                font-size: 12px;
+            }
+            .item-inner {
+                border-bottom: 0px;
+            }
+        }
+        .item-button {
+            color: #666;
+            padding: 0px;
+        }
+        .attachment {
+            color: #666;
+            .file-size {
+                padding-left: 4px;
+            }
+        }
+        .download-message {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .contents {
+            font-size: 1.6rem;
+        }
+    }
+}
+

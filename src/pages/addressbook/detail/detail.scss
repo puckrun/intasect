@@ -1,0 +1,28 @@
+page-detail{
+    .addressbook-detail {
+        .status {
+            color: #666;
+            .avatar img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+        .name {
+            font-size: 2.0rem;
+            color: #222;
+            font-weight: bold;
+            white-space: pre-wrap;
+        }
+        .item-button {
+            color: #666;
+            padding: 0px;
+        }
+        &.scroll-to-top {
+            bottom: 88px;
+        }
+        .contents {
+            font-size: 1.6rem;
+        }
+    }
+}
+

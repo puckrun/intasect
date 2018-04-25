@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{"app.blog.title" | translate}}
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button type="" class="button-left" (click)="addBlog()">{{ "app.blog.addBlog" | translate }}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="blog-index">
+    <div class="loading" text-center [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+    <ion-searchbar (input)="serachBlogs($event)" *ngIf="isLoadCompleted&&isShowSearchBar" showCancelButton=false placeholder='{{"app.action.search" | translate}}'>
+        <ion-icon name="search"></ion-icon>
+    </ion-searchbar>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="circles"> </ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+        <button ion-item detail-none *ngFor="let community of communityListForTop" (click)="openDetail(community)">
+            <ion-avatar item-left>
+                <img src="{{community.createUserAvatar}}" />
+            </ion-avatar>
+            <p>{{community.createUserName}}</p>
+            <h2 class="title">{{community.title}}</h2>
+            <div item-right class="status">
+                <ion-badge class="new" *ngIf="community.readStatus=='NOT_READ'">{{"app.blog.newBlog" | translate}}</ion-badge>
+                <ion-badge class="new-reply" *ngIf="community.readStatus!='NOT_READ' && community.newReplyFlag=='TRUE'">{{"app.blog.newReturn" | translate}}</ion-badge>
+                <p>{{community.publishStartDate}}</p>
+            </div>
+        </button>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <ion-fab bottom right #fab>
+        <button ion-fab color="top" fab fab-right fab-bottom [hidden]="!isScrollToTopButtonVisible" (click)="scrollToIndexPageTop()">
+            <ion-icon name="arrow-up"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

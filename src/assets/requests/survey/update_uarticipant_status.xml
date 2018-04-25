@@ -1,0 +1,8 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <UpdateParticipantStatus xmlns="http://schemas.intasect.co.jp/generictools/service/Survey" preserveSpace="no" qAccess="0" qValues="">
+      <surveyID />
+      <participantStaus />
+    </UpdateParticipantStatus>
+  </SOAP:Body>
+</SOAP:Envelope>

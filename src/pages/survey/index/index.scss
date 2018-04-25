@@ -1,0 +1,51 @@
+//@import "../pages/survey/detail/detail";
+//@import "../pages/survey/result/result";
+//@import "../pages/survey/option-result-detail/option-result-detail";
+
+page-survey-index {
+    .survey-index {
+        ion-avatar {
+            img {
+                width: 3.6rem;
+                height: 3.6rem;
+                max-width: 3.6rem;
+                max-height: 3.6rem;
+                margin: 0 auto;
+            }
+        }
+        ion-list > .item:first-child,
+        ion-list > .item-wrapper:first-child .item {
+            border-top: 0px;
+        }
+        .title {
+            white-space: pre-wrap;
+            font-weight: normal;
+        }
+        .status {
+            text-align: center;
+            width: 6rem;
+            margin: 0px;
+            .not_read  {
+                color: white;
+                padding: 4px;
+                border-radius: 2px;
+                background-color: red;
+                margin-bottom: 4px;
+            }
+            .not_processed {
+                @extend .not_read;
+                background-color: rgb(255,140,0);
+            }
+        }
+        .completed {
+            color: #666;
+        }
+        .today-completed {
+            .title, .collection-date, .status p{
+                color: red;
+            }
+        }
+    }
+}
+
+

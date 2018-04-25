@@ -1,0 +1,27 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP:Header>
+      <header xmlns="http://schemas.cordys.com/General/1.0/">
+         <Logger>
+            <DC name="XForms">/jp/co/intasect/generictools/xform/survey/resultlist.caf</DC>
+            <DC name="hopCount">0</DC>
+            <DC name="correlationID">4b7a9c96-0611-11e6-ede4-8cbc0cdcdde4</DC>
+         </Logger>
+      </header>
+      <i18n:international xmlns:i18n="http://www.w3.org/2005/09/ws-i18n">
+         <locale xmlns="http://www.w3.org/2005/09/ws-i18n">ja</locale>
+      </i18n:international>
+   </SOAP:Header>
+   <SOAP:Body>
+      <GetSurveyParticipantResultList xmlns="http://schemas.intasect.co.jp/generictools/service/Survey" preserveSpace="no" qAccess="0" qValues="">
+         <surveyOptionParam>
+            <SurveyOptionInput>
+               <optionID />
+               <surveyID />
+               <optionName />
+               <inputFlag />
+               <sortOrder />
+            </SurveyOptionInput>
+         </surveyOptionParam>
+      </GetSurveyParticipantResultList>
+   </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,12 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Body>
+    <GetUserList xmlns="http://schemas.intasect.co.jp/generictools/service/User" preserveSpace="no" qAccess="0" qValues="">
+      <userParam>
+        <UserInput>
+          <selType />
+          <userID />
+        </UserInput>
+      </userParam>
+    </GetUserList>
+  </SOAP:Body>
+</SOAP:Envelope>

@@ -1,0 +1,52 @@
+page-blog-add-comment {
+    .add-comment {
+        ion-item {
+            padding-left: 0;
+            .item-inner {
+                padding-right: 0;
+            }
+            textarea {
+                min-height: 25vh;
+                margin: 0;
+            }
+        }
+        .selected-pictures {
+            ion-label {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                ion-thumbnail {
+                    margin: 1rem;
+                    min-width: 19%;
+                    button {
+                        font-size: 2.5rem;
+                        position: relative;
+                        box-shadow: 0 0 0 0;
+                        top: 1.5rem;
+                        left: 4rem;
+                        border-radius: 5rem;
+                        margin: 0rem;
+                        padding: 0rem;
+                        height: auto;
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+    }
+    .add-comment-toolbar {
+        .upload-input {
+            opacity:0; 
+            position: absolute;
+            right: 0;
+            width: 60px;
+            height: 50px;
+        }
+        .toolbar-content {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+

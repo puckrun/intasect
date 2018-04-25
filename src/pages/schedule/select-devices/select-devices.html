@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="close()">
+                {{"app.action.cancel" | translate}}
+            </button>
+        </ion-buttons>
+        <ion-title>{{"app.schedule.selectDevices" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="selectDevices()">
+                {{"app.action.done" | translate}}
+                <span [hidden]="selectedDeviceCount<=0">({{selectedDeviceCount}})</span>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-searchbar (input)="findDevices($event)" [showCancelButton]=false placeholder='{{"app.action.search" | translate}}'>
+        <ion-icon name="search"></ion-icon>
+    </ion-searchbar>
+</ion-header>
+<ion-content padding class="select-devices">
+    <ion-list [hidden]="isSearching!=true">
+        <ion-item *ngFor="let device of foundDevices">
+            <ion-checkbox [(ngModel)]="device.isSelected" (ngModelChange)="changeSelectedDevice(device)"></ion-checkbox>
+            <ion-label>{{device.deviceName}}</ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-list [hidden]="isSearching==true">
+        <ion-item *ngFor="let device of devices">
+            <ion-checkbox [(ngModel)]="device.isSelected" (ngModelChange)="changeSelectedDevice(device)"></ion-checkbox>
+            <ion-label>{{device.deviceName}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

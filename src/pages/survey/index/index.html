@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{"app.survey.title" | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="survey-index" >
+    <div class="loading" text-center [hidden]="isLoadCompleted">
+        <ion-spinner name="dots"></ion-spinner>
+    </div>
+    <ion-searchbar (input)="serachSurveys($event)" *ngIf="isLoadCompleted&&isShowSearchBar" showCancelButton=false placeholder='{{"app.action.search" | translate}}'>
+        <ion-icon name="search"></ion-icon>
+    </ion-searchbar>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="circles"> </ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+        <button ion-item [ngClass]="{'completed': survey.status=='COMPLETION', 'today-completed':survey.isTodayCompleted==true&&survey.status!='COMPLETION'}" detail-none *ngFor="let survey of surveyListForTop" (click)="openDetail(survey)">
+            <ion-avatar item-left>
+                <img src="{{survey.createUserAvatar}}" />
+            </ion-avatar>
+            <p>{{survey.createUserName}}</p>
+            <h2 class="title">{{survey.title}}</h2>
+            <p class="collection-date">{{"app.survey.collectionPeriod"|translate}}{{survey.startDay}}~{{survey.endDay}}</p>
+            <div item-right class="status">
+                <ion-badge class="not_read" *ngIf="survey.status=='ACTIVE'&&(survey.processStatus=='NOT_READ'||survey.processStatus=='PROCESSED_BUT_NOT_READ')">{{"app.survey.newSurvey" | translate}}</ion-badge>
+                <ion-badge class="not_processed" *ngIf="survey.status=='ACTIVE'&&survey.processStatus=='NOT_PROCESSED'">{{"app.survey.newSurvey" | translate}}</ion-badge>
+                <p *ngIf="survey.status!='COMPLETION'">{{survey.collectionStatus}}</p>
+                <p *ngIf="survey.status=='COMPLETION'">{{"app.survey.completedStatus" | translate}}</p>
+            </div>
+        </button>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <ion-fab bottom right #fab>
+        <button ion-fab color="top" fab fab-right fab-bottom [hidden]="!isScrollToTopButtonVisible" (click)="scrollToIndexPageTop()">
+            <ion-icon name="arrow-up"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
